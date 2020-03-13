@@ -6,9 +6,20 @@
 <%@include file="common/meta.jsp"%>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/aiaas/kr/css/habit.css">
 
 
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/aiaas/kr/css/table.css">
+
+<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+</script>
 </head>
 <body>
 
@@ -71,19 +82,20 @@
 													<tr>
 														<th>운전자 명</th>
 														<th>총 점수</th>
-														<th>랭킹</th>
+														<th>정보</th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
-														<td><a href="#">이민영</a></td>
-														<td>3211</td>
-														<td>1</td>
+														<td rowspan="3"><b>이민영</b></td>
+														<td rowspan="3"><a href="#">3211</a></td>
+														<td>급가속 : 2회</td>
 													</tr>
 													<tr>
-														<td><a href="#">최우정</a></td>
-														<td>2998</td>
-														<td>2</td>
+														<td>급 좌회전: 3회</td>
+													</tr>
+													<tr>
+														<td>급 정지: 0회</td>
 													</tr>
 												</tbody>
 											</table>
@@ -174,93 +186,33 @@
 									</nav>
 									<div class="tab-content" id="nav-tabContent">
 										<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-											<table class="table" cellspacing="0">
-												<thead>
-													<tr>
-														<th>운전자 명</th>
-														<th>총 점수</th>
-														<th>랭킹</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td><a href="#">이민영</a></td>
-														<td>3211</td>
-														<td>1</td>
-													</tr>
-													<tr>
-														<td><a href="#">최우정</a></td>
-														<td>2998</td>
-														<td>2</td>
-													</tr>
-													<tr>
-														<td><a href="#">윤태일</a></td>
-														<td>1201</td>
-														<td>3</td>
-													</tr>
-													<tr>
-														<td><a href="#">윤태일</a></td>
-														<td>1201</td>
-														<td>3</td>
-													</tr>
-													<tr>
-														<td><a href="#">윤태일</a></td>
-														<td>1201</td>
-														<td>3</td>
-													</tr>
-													<tr>
-														<td><a href="#">윤태일</a></td>
-														<td>1201</td>
-														<td>3</td>
-													</tr>
-													<tr>
-														<td><a href="#">윤태일</a></td>
-														<td>1201</td>
-														<td>3</td>
-													</tr>
-													<tr>
-														<td><a href="#">윤태일</a></td>
-														<td>1201</td>
-														<td>3</td>
-													</tr>
-													<tr>
-														<td><a href="#">윤태일</a></td>
-														<td>1201</td>
-														<td>3</td>
-													</tr>
-													<tr>
-														<td><a href="#">윤태일</a></td>
-														<td>1201</td>
-														<td>3</td>
-													</tr>
-													<tr>
-														<td><a href="#">윤태일</a></td>
-														<td>1201</td>
-														<td>3</td>
-													</tr>
-													<tr>
-														<td><a href="#">윤태일</a></td>
-														<td>1201</td>
-														<td>3</td>
-													</tr>
-													<tr>
-														<td><a href="#">윤태일</a></td>
-														<td>1201</td>
-														<td>3</td>
-													</tr>
-													<tr>
-														<td><a href="#">윤태일</a></td>
-														<td>1201</td>
-														<td>3</td>
-													</tr>
-													<tr>
-														<td><a href="#">윤태일</a></td>
-														<td>1201</td>
-														<td>3</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
+										<table id="table_id" class="tg">
+    <thead>
+      <tr>
+        <th class="tg-c3ow">Firstname</th>
+        <th class="tg-c3ow">Lastname</th>
+        <th class="tg-c3ow">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-c3ow">John</td>
+        <td class="tg-c3ow">Doe</td>
+        <td class="tg-c3ow">john@example.com</td>
+      </tr>
+      <tr>
+        <td class="tg-c3ow">Mary</td>
+        <td class="tg-c3ow">Moe</td>
+        <td class="tg-c3ow">mary@example.com</td>
+      </tr>
+      <tr>
+        <td class="tg-c3ow">July</td>
+        <td class="tg-c3ow">Dooley</td>
+        <td class="tg-c3ow">july@example.com</td>
+      </tr>
+    </tbody>
+</table>
+									</div>
 										<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 											<table class="table" cellspacing="0">
 												<thead>
