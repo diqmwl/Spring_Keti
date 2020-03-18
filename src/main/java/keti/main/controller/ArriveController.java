@@ -24,8 +24,9 @@ public class ArriveController {
 	@RequestMapping(value = "/get_gps")
 	public List<Object> arrive_getGPS(@RequestParam(value = "id") String id,
 			@RequestParam(value = "name") String name,
+			@RequestParam(value = "time") String time,
 			Model model, Principal principal) {
-		List<Object> gpsList = arriveService.getGPS(id, name);
+		List<Object> gpsList = arriveService.getGPS(id, name, time);
 		return gpsList;
 	}
 	

@@ -704,6 +704,8 @@
 
 .factory_container3{position: absolute; overflow-y: auto; overflow-x: hidden; display:none; top:366px; left:30px; z-index: 2; background-color: #F9F9F9; width: 200px; height:300px; border-radius: 4px; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); border: 1px solid rgba(0, 0, 0, 0.2); padding-bottom: 15px;}
 
+.factory_container4{position: absolute; display:none; top:368px; left:230px; z-index: 2; background-color: #F9F9F9; width: auto; border-radius: 4px; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); }
+
 .fac_h3{font-size: 15px !important; margin: 15px;}
 
 .fac_h1{font-size: 26px !important; margin: 20px;}
@@ -788,4 +790,16 @@
 
 .time{
 	color: #1A73E8;
+}
+
+.factory_container3 > button.on, .tbody > tr.on{
+	background-color: #ffffd4;
+}
+
+.factory_container3 > button{
+	background-color: #F9F9F9;
+}
+
+.tbody > tr{
+		background-color: #FFFFFF;
 }

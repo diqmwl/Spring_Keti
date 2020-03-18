@@ -15,8 +15,8 @@ public class ArriveService {
 	@Autowired
 	private ArriveDAO arriveDAO;
 	
-	public List<Object> getGPS(String id, String name){
-		return arriveDAO.getGPS(id, name);
+	public List<Object> getGPS(String id, String name, String time){
+		return arriveDAO.getGPS(id, name, time);
 	}
 
 	public List<Arrive_Car> getCAR(String mapnum) {

@@ -12,11 +12,11 @@
 
 <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
-<script>
-$(document).ready(function() {
-    $('.js-example-basic-single').select2();
-});
-</script>
+
+
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/aiaas/kr/css/datepicker.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/datepicker.js"></script>
+<script src="${pageContext.request.contextPath}/resources/aiaas/kr/js/datepicker.en.js"></script>
 
 </head>
 <body style="height: 100%; overflow:hidden;">
@@ -68,10 +68,13 @@ $(document).ready(function() {
 				</div>
 
 				<div class="factory_container2">
-					<h3 class="select_h3">차량 선택</h3>
+					<h3 class="select_h3">차량 선택</h3>					
 					<button id = "down_btn"><img style="width: 15px; height: 15px;" src="${pageContext.request.contextPath}/resources/aiaas/kr/images/down.png"></button>
 				</div>
-				<div class="factory_container3">
+				<div class="factory_container3">				
+				</div>
+				<div class="factory_container4">
+					<div class="datepicker-here" data-language='en' data-timepicker="true" data-time-format="hh:ii:00" data-date-format="yyyy-mm-dd"></div>
 				</div>
 				
 				<div id="map" style="width:100%;height: 98%;"></div>
@@ -102,7 +105,7 @@ $(document).ready(function() {
 			                    <th scope="col">지역</th>
 			                  </tr>
 			                </thead>
-			                <tbody id="out_tbody">
+			                <tbody id="out_tbody" class = "tbody">
 			                  <tr>
 			                    <th scope="row">
 			                    	<span class="mb-0 text-sm">차량 목록이 없습니다</span>
@@ -133,7 +136,7 @@ $(document).ready(function() {
 			                    <th scope="col">지역</th>
 			                  </tr>
 			                </thead>
-			                <tbody id="in_tbody">
+			                <tbody id="in_tbody" class = "tbody">
 			                  <tr>
 			                    <th scope="row">
 			                    	<span class="mb-0 text-sm">차량 목록이 없습니다</span>

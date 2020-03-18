@@ -1,7 +1,11 @@
 package keti.main.dao;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import org.influxdb.InfluxDB;
@@ -24,9 +28,21 @@ public class ArriveDAO {
 		influxDB = InfluxDBFactory.connect("http://125.140.110.217:8999" , "tinyos", "tinyos");
 	}
 
-	public List<Object> getGPS(String id, String name) {
+	public List<Object> getGPS(String id, String name, String time) {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date date;
+		Calendar cal = Calendar.getInstance();
+		try {
+			date = format.parse(time);
+			cal.setTime(date);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		cal.add(Calendar.HOUR, -9);
+		String end_time = time.split(" ")[0];
+		
 		List<Object> gpsList = new ArrayList<Object>();
-		QueryResult queryResult = influxDB.query(new Query("select * from VISIT_RULE WHERE car_id = '"+id+"' AND time >= now()-3d order by desc limit 5", "SAMPYO_MONIT"));
+		QueryResult queryResult = influxDB.query(new Query("select * from VISIT_RULE WHERE car_id = '"+id+"' AND time <= '"+end_time+" 14:59:59' AND time >= '"+format.format(cal.getTime())+"' order by desc", "SAMPYO_MONIT"));
 		InfluxDBResultMapper resultMapper = new InfluxDBResultMapper();
 		List<Arrive_Visit> List = resultMapper.toPOJO(queryResult, Arrive_Visit.class);
 		
