@@ -117,30 +117,32 @@
 .txt_box .notice_box {position: absolute;right: 0;z-index: 10;top: -45px;}
 .txt_box .notice_box .boxarea {width:250px;float: right; box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);border-radius: 5px;}
 .txt_box .notice_box .boxarea .box_top{height:18px;border-radius: 5px 5px 0 0;position:relative;background: #fff;}
-.txt_box .notice_box .boxarea .box_close {overflow:hidden; position:absolute; top:18px; right:5px; width:22px; height:22px; margin:-11px 0 0 0;line-height: 100px; border:none; background:none; opacity:0.5; cursor:pointer; transition:all 0.3s ease-out; z-index: 1000;}
+.txt_box .notice_box .boxarea .box_close, .box_close2 {overflow:hidden; position:absolute; top:0px; right:5px; width:22px; height:22px; margin:-11px 0 0 0;line-height: 100px; border:none; background:none; opacity:0.5; cursor:pointer; transition:all 0.3s ease-out; z-index: 1000;}
 .txt_box .notice_box .boxarea .box_close:hover, .boxarea .box_close:focus {opacity:1.0; transition:all 0.3s ease-out;}
-.txt_box .notice_box .boxarea .box_close:before {content:'';  position:absolute; top:10px; left:50%; width:16px; height:2px; margin:-1px 0 0 -11px; background:#eee; transform:rotate(45deg);}
-.txt_box .notice_box .boxarea .box_close:after {content:'';  position:absolute; top:10px; left:50%; width:16px; height:2px; margin:-1px 0 0 -11px; background:#eee; transform:rotate(-45deg);}
+.txt_box .notice_box .boxarea .box_close:before {content:'';  position:absolute; top:10px; left:50%; width:16px; height:2px; margin:-1px 0 0 -11px; background:black; transform:rotate(45deg);}
+.txt_box .notice_box .boxarea .box_close:after {content:'';  position:absolute; top:10px; left:50%; width:16px; height:2px; margin:-1px 0 0 -11px; background:black; transform:rotate(-45deg);}
+.txt_box .notice_box .boxarea .box_close2:before {content:'';  position:absolute; top:10px; left:50%; width:16px; height:2px; margin:-1px 0 0 -11px; background:white; transform:rotate(45deg);}
+.txt_box .notice_box .boxarea .box_close2:after {content:'';  position:absolute; top:10px; left:50%; width:16px; height:2px; margin:-1px 0 0 -11px; background:white; transform:rotate(-45deg);}
 .txt_box .notice_box .boxarea .box_close.close3:before, .txt_box .notice_box .boxarea .box_close.close3:after {background: #20296d;}
 .txt_box .notice_box .boxarea .box_body{ text-align: center;border-radius: 0 0 5px 5px;}
-.txt_box .notice_box .boxarea .box_body .pop_cont {background: url("../images/logo_mo_svc.png") 50% 0 no-repeat;background-size: 70px;}
+.txt_box .notice_box .boxarea .box_body .pop_cont {}
 .txt_box .notice_box .boxarea .box_body .pop_cont h1 { padding:60px 0 0 0;font-weight: 500;font-size:28px;  letter-spacing: -0.56px;color: #fff;}
 .txt_box .notice_box .boxarea .box_body .pop_cont h1 span {font-family: 'Lato', sans-serif; font-style:italic;}
 .txt_box .notice_box .boxarea .box_body .pop_cont span.subtitle{display: block;margin:10px auto; width:118px;height:22px;line-height:22px;background: rgba(255,255,255,0.2);color:#fff;font-size:14px;border-radius: 2.8px; font-weight:300;font-family: Georgia,Times,Times New Roman,serif; font-style:italic;letter-spacing: -0.1px;}
 .txt_box .notice_box .boxarea .box_body .pop_bottom {border-radius: 5px; background: rgba(20,21,49,0.4);position: absolute;bottom: 0;width: 100%;}
 .txt_box .notice_box .boxarea .box_body .pop_bottom p {box-sizing: border-box;height: 108px;letter-spacing: -1px;font-size:14px; font-weight: 400; padding: 6px 0 0 0;color: #fff;line-height: normal;}
 .txt_box .notice_box .boxarea .box_body p{color:#343f4f;font-size:17px;line-height: 24.5px; padding: 88px 0 0 0;}
-.txt_box .notice_box .boxarea .box_body button{width:100px; height:35px; margin:15px auto 0;color:#fff;border:1px solid #2575f9; border-radius: 17.5px;background: #2575f9; font-weight: 500;cursor:pointer; font-size: 14px;}
+.txt_box .notice_box .boxarea .box_body button{width:30px; height:35px; margin:15px auto 0;color:#fff; font-weight: 500;cursor:pointer; font-size: 14px;}
 .txt_box .notice_box .left_box {background:#fff url("../../common/images/pop_voicealbum.png") 50% 0 no-repeat; height: 250px;background-size: contain;position:relative; float: right; margin: 0 10px 0 10px;box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);}
 .txt_box .notice_box .left_box .box_top{background:none;}
 .txt_box .notice_box .left_box .box_body a{position: absolute;height:35px;line-height: 35px;width:101px; display: block; left: 50%;bottom: 20px;border-radius: 17.5px;margin: 0 0 0 -50px;background: #7d71d1; color: #fff; border: none; font-weight: 400; font-size: 14px;}
-.txt_box .notice_box .aca_box{float:right;background: url(../../common/images/aidata/bg_popdata.png) 50% 0 no-repeat; height: 250px; background-size: contain;position: relative; margin: 0;box-shadow: none;}
+.txt_box .notice_box .aca_box{float:right; height: 250px; background-size: contain;position: relative; margin: 0 5px;}
 .txt_box .notice_box .aca_box .box_top{background:none;}
 .txt_box .notice_box .aca_box .box_body {background: none;}
 .txt_box .notice_box .aca_box a{position: absolute;width:100px; height:35px;line-height: 35px; display: block; left: 50%;bottom: 20px;border-radius: 17.5px;margin: 0 0 0 -50px;background: #5e77ff;; color:#fff; border: none;font-weight: 500; font-size: 14px;}
 .txt_box .notice_box .boxarea .box_body .pop_cont h5 {padding: 62px 0 0 20px;text-align: left;line-height: 1.27;font-weight:normal;letter-spacing: -0.83px;color: #5e77ff;font-size:22px;}
 .txt_box .notice_box .boxarea .box_body .data_bottom {background: transparent;}
-.txt_box .notice_box .boxarea .box_body .data_bottom p {letter-spacing: -1px;color: #404a92;text-align: left;padding: 0 20px;font-weight: 500;}
+.txt_box .notice_box .boxarea .box_body .data_bottom p {letter-spacing: -1px;color: #404a92;text-align: center;font-weight: 500;}
 
 .login_box .txt_box .img_box {position:relative; width:260px; height:145px; margin:0 auto;}
 .login_box .txt_box .img_box img {position:absolute;left:60px; width:260px; animation:3s linear 0s infinite alternate cloud; -webkit-animation:3s linear 0s infinite alternate cloud;}
@@ -192,7 +194,7 @@
 .common_footer {width:100%;margin:70px auto 20px;text-align:center;}
 .common_footer p {color:#002b49;line-height:19px; font-size:11px;}
 .common_footer p a.footerlogo {display:block; width:170px;	margin:0 auto;}
-.common_footer p img {display:block; margin:10px auto;}
+.common_footer p img {display:block; margin:0px auto; width: 100%}
 .common_footer p a {color:#002b49;}
 .common_footer p strong {margin:0 10px 0 0;}
 /*.signup_box + .common_footer {position: absolute;bottom:0;}*/
@@ -802,4 +804,9 @@
 
 .tbody > tr{
 		background-color: #FFFFFF;
+}
+
+.pop_img{
+	width: 100%;
+	height: 143px;	
 }

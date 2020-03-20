@@ -8,11 +8,9 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 
-<!-- icon_favicon -->
-<link rel="apple-touch-icon-precomposed"
-	href="/aiaas/kr/images/ico_maumAI_60x60.png">
-<link rel="shortcut icon" type="image/x-icon"
-	href="/aiaas/kr/images/ico_maumAI_60x60.ico">
+<!-- favicon.ico 404 (Not Found) -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
 <title>keti platform</title>
 <!-- resources -->
 <link rel="stylesheet" type="text/css"

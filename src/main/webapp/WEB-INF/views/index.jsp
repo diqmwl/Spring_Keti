@@ -19,15 +19,10 @@
 				<div class="txt_box">
 					<div class="notice_box">
 						<div class="boxarea left_box animated fadeInDown ">
-							<div class="box_top">
-								<button class="box_close close2" type="button">닫기</button>
-							</div>
 							<div class="box_body">
 								<div class="pop_cont">
-									<h1>
-										<span>Voice</span> 앨범
-									</h1>
-									<span class="subtitle">We call it LOVE!</span>
+									<button class="box_close2 close2" type="button">닫기</button>
+									<img class="pop_img" alt="차량 모니터링 서비스" src="${pageContext.request.contextPath}/resources/aiaas/kr/images/logo_mo_svc.png">
 								</div>
 								<div class="pop_bottom">
 									<p>
@@ -38,25 +33,14 @@
 							</div>
 						</div>
 
-
-
-
-
-
-
-
 						<div class="boxarea aca_box animated fadeInDown delay-1">
-							<div class="box_top">
-								<button class="box_close close3" type="button">닫기</button>
-							</div>
 							<div class="box_body">
 								<div class="pop_cont">
-									<h5>
-										<strong>차량 위치기반<br> 출 도착
-										</strong> 서비스
-									</h5>
+									<button class="box_close close3" type="button">닫기</button>
+									<img class="pop_img" alt="차량 모니터링 서비스" src="${pageContext.request.contextPath}/resources/aiaas/kr/images/logo_arrive_svc.png">
 								</div>
 								<div class="pop_bottom data_bottom">
+
 									<p>
 										고품질 차량 출도착 서비스를<br> 경험하세요
 									</p>
@@ -109,7 +93,7 @@
 									<li>
 										<dl class="ico_stt">
 											<dt>
-												<span>음성 인식</span> <em>Speech Recognition,
+												<span>카테고리 A_미정_1</span> <em>Speech Recognition,
 													Speech-to-Text</em>
 											</dt>
 											<dd>음성을 텍스트로 변환하는 엔진으로, 다양한 학습모델을 활용할 수 있고 높은 인식률과 빠른 처리
@@ -123,7 +107,7 @@
 									<li>
 										<dl class="ico_den">
 											<dt>
-												<span>음성 정제</span> <em>Denoise</em>
+												<span>카테고리 A_미정_2</span> <em>Denoise</em>
 											</dt>
 											<dd>음성에 섞여있는 배경음과 같이, 음성 내의 다양한 잡음을 제거합니다.</dd>
 											<dd class="ytb_link">
@@ -136,7 +120,7 @@
 									<li>
 										<dl class="ico_dia">
 											<dt>
-												<span>화자 분리</span> <em>Diarization</em>
+												<span>카테고리 A_미정_3</span> <em>Diarization</em>
 											</dt>
 											<dd>회의 음성 등 여러 사람의 음성이 포함된 음성을 입력하면 어떤 시간에 어떤 화자가 말한
 												음성인지 분리해 냅니다.</dd>
@@ -150,7 +134,7 @@
 									<li>
 										<dl class="ico_vr">
 											<dt>
-												<span>화자 인증</span> <em>Voice Recognition</em>
+												<span>카테고리 A_미정_4</span> <em>Voice Recognition</em>
 											</dt>
 											<dd>사람의 음성 데이터를 Vector화하고 그 값을 대조하여 목소리를 인식합니다.</dd>
 										</dl>
@@ -172,7 +156,7 @@
 									<li>
 										<dl class="ico_xdc">
 											<dt>
-												<span>텍스트 분류</span> <em>eXplainable Document Classifier</em>
+												<span>카테고리 B_미정_1</span> <em>eXplainable Document Classifier</em>
 											</dt>
 											<dd>뉴스 기사를 입력하면 기사의 주제를 정확하게 분류해 냅니다. 더불어 분류의 근거를 문장 단위와
 												단어 단위로 제공하는 '설명 가능한 AI'입니다.</dd>
@@ -185,7 +169,7 @@
 									<li>
 										<dl class="ico_nlu">
 											<dt>
-												<span>자연어 이해</span> <em>Natural Language Understanding</em>
+												<span>카테고리 B_미정_2</span> <em>Natural Language Understanding</em>
 											</dt>
 											<dd>문장을 입력하면 형태소 분석과 개체명 인식 결과를 제공해 줍니다.</dd>
 											<dd class="ytb_link">
@@ -197,7 +181,7 @@
 									<li>
 										<dl class="ico_hmd">
 											<dt>
-												<span>패턴 분류</span> <em>Hierarchical Multiple Dictionary</em>
+												<span>카테고리 B_미정_3</span> <em>Hierarchical Multiple Dictionary</em>
 											</dt>
 											<dd>정규표현식으로 표현된 긍정, 부정 문장 패턴을 통해서 문장의 감정을 파악하고 분류합니다.</dd>
 											<dd class="ytb_link">
@@ -209,7 +193,7 @@
 									<li>
 										<dl class="ico_nlg">
 											<dt>
-												<span>문장 생성</span> <em>NLG(Natural Language Generation)</em>
+												<span>카테고리 B_미정_4</span> <em>NLG(Natural Language Generation)</em>
 											</dt>
 											<dd>문장을 입력하며, 이를 이어 받아서 새로운 문장을 작문합니다.</dd>
 											<dd class="ytb_link">
@@ -221,7 +205,7 @@
 									<li>
 										<dl class="ico_itf">
 											<dt>
-												<span>의도 분류</span> <em>ITF(Intent Finder)</em>
+												<span>카테고리 B_미정_5</span> <em>ITF(Intent Finder)</em>
 											</dt>
 											<dd>입력된 질문의 의도를 파악하여 알려줍니다.</dd>
 											<dd class="ytb_link">
@@ -256,7 +240,7 @@
 									<li>
 										<dl class="ico_tr">
 											<dt>
-												<span>텍스트 지우기</span> <em>Text Removal</em>
+												<span>카테고리 C_미정_1</span> <em>Text Removal</em>
 											</dt>
 											<dd class="txt">이미지에 있는 텍스트를 찾아 내어 제거해줍니다.</dd>
 											<dd class="img">
@@ -272,7 +256,7 @@
 									<li>
 										<dl class="ico_avr">
 											<dt>
-												<span>도로상의 객체 인식</span> <em>AI Vehicle Recognition
+												<span>카테고리 C_미정_2</span> <em>AI Vehicle Recognition
 													(AVR)</em>
 											</dt>
 											<dd>도로 상에서 달리는 차량의 이미지를 입력하면 창문의 위치, 차안에 있는 사람의 위치 그리고
@@ -287,7 +271,7 @@
 										<dl class="ico_esr"
 											style="background: url(/aiaas/kr/images/menu/ico_vis_5_fold.svg) 6px 6px no-repeat; background-size: 43px;">
 											<dt>
-												<span>ESR</span> <em>Enhanced Super Resolution</em>
+												<span>카테고리 C_미정_3</span> <em>Enhanced Super Resolution</em>
 											</dt>
 											<dd>작은 크기의 이미지를 손실률을 최소화하여 확대해줍니다.</dd>
 										</dl>
@@ -296,7 +280,7 @@
 										<dl class="ico_esr"
 											style="background: url(/aiaas/kr/images/menu/ico_vis_6_fold_.svg) 10px 6px no-repeat; background-size: 32px;">
 											<dt>
-												<span>얼굴 인증</span> <em>Face Recognition</em>
+												<span>카테고리 C_미정_4</span> <em>Face Recognition</em>
 											</dt>
 											<dd>사람의 얼굴 데이터를 Vector화하고 그 값을 대조하여 얼굴을 인식합니다.</dd>
 										</dl>
@@ -326,7 +310,7 @@
 									<li>
 										<dl class="ico_phonics">
 											<dt>
-												<span>파닉스 평가</span> <em>Phonics Assessment</em>
+												<span>카테고리 D_미정_1</span> <em>Phonics Assessment</em>
 											</dt>
 											<dd class="txt">영어 단어의 특정 음소를 지정하여 음소단위의 발음평가를 제공합니다.</dd>
 											<dd class="ytb_link">
@@ -342,7 +326,7 @@
 						</div>
 					</div>
 					<div class="add_box">
-						<h5 class="">인공지능을 위한 스마트 솔루션</h5>
+						<h5 class="">빅데이터 서비스를 위한 플랫폼</h5>
 						<ul>
 							<li><a href="https://data.maum.ai" target="_blank"
 								title="마음 Data: 데이터 편집 툴">
