@@ -358,10 +358,6 @@
 				</div>
 		</div>
 	
-	
-	
-	
-	
 	<!-- 2 .pop_confirm -->
 	<div class="pop_confirm">
 		<div class="pop_bg"></div>
