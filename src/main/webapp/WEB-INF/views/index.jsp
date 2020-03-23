@@ -32,7 +32,6 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="boxarea aca_box animated fadeInDown delay-1">
 							<div class="box_body">
 								<div class="pop_cont">
