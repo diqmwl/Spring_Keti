@@ -10,6 +10,7 @@
 	<body>
 	<div id="wrap">
 		<div class="loginWrap">
+		
 			<%@include file="common/header.jsp"%>
 
 			<div class="login_box">
