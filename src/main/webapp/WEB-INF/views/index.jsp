@@ -13,7 +13,6 @@
     
 			<%@include file="common/header.jsp"%>
 
-
 			<div class="login_box">
 
 				<div class="txt_box">
