@@ -93,8 +93,7 @@
 									<li>
 										<dl class="ico_stt">
 											<dt>
-												<span>카테고리 A_미정_1</span> <em>Speech Recognition,
-													Speech-to-Text</em>
+												<span>카테고리 A_미정_1</span> <em>Speech Recognition, Speech-to-Text</em>
 											</dt>
 											<dd>음성을 텍스트로 변환하는 엔진으로, 다양한 학습모델을 활용할 수 있고 높은 인식률과 빠른 처리
 												속도를 제공합니다.</dd>
