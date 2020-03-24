@@ -3,7 +3,9 @@ pipeline {
   ARTIFACT = readMavenPom().getArtifactId()
   VERSION = readMavenPom().getVersion()
   }
+  
   agent any
+  
   stages {
     stage('build_start') {
       steps {
@@ -11,6 +13,14 @@ pipeline {
         sh 'echo "$VERSION"'
       }
     }
-
   }
+  
+    stages {
+    stage('docker_build') {
+      steps {
+        sh 'sudo docker build --build-arg IMAGE_ARG=$ARTIFACT$VERSION -t diqmwl/keti_spring:2.0 .'
+      }
+    }
+  }
+  
 }
