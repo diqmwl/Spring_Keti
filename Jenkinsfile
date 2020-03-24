@@ -7,7 +7,7 @@ pipeline {
     stage('') {
       steps {
         sh 'echo "start"'
-        sh 'echo "$VERSION1"'
+        sh 'echo "$VERSION"'
       }
     }
 
