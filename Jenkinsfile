@@ -13,14 +13,12 @@ pipeline {
         sh 'echo "$VERSION"'
       }
     }
-  }
   
-    stages {
     stage('docker_build') {
       steps {
         sh 'sudo docker build --build-arg IMAGE_ARG=$ARTIFACT$VERSION -t diqmwl/keti_spring:2.0 .'
       }
     }
+    
   }
-  
 }
