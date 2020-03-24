@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    VERSION = "1.0.0"
+    VERSION = readMavenPom().getVersion()
   }
   agent any
   stages {
