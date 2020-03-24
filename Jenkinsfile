@@ -16,10 +16,8 @@ pipeline {
   
     stage('docker_build') {
       steps {
-       	sh 'ls'
-      	sh 'cd $HOME/workspace/Spring_Keti_master/config'
-      	sh 'cd config'
-     	sh 'ls'
+       	sh 'cd src'
+      	sh 'ls'
         sh 'sudo docker build --build-arg IMAGE_ARG=$ARTIFACT$VERSION -t diqmwl/keti_spring:2.0 .'
       }
     }
