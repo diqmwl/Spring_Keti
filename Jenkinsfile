@@ -1,14 +1,14 @@
 pipeline {
   environment {
     pom = readMavenPom file: 'pom.xml'
-    VERSION = pom.version
+    VERSION1 = pom.version
   }
   agent any
   stages {
     stage('') {
       steps {
         sh 'echo "start"'
-        sh 'echo "$VERSION"'
+        sh 'echo "$VERSION1"'
       }
     }
 
