@@ -1,7 +1,9 @@
 pipeline {
   environment {
+  ARTIFACT = readMavenPom().getArtifactId()
   VERSION = readMavenPom().getVersion()
   }
+  
   agent any
   stages {
     stage('') {
