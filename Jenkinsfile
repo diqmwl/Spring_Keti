@@ -16,6 +16,7 @@ pipeline {
   
     stage('docker_build') {
       steps {
+       	sh 'ls'
       	sh 'cd $HOME/workspace/Spring_Keti_master/config'
       	sh 'cd config'
      	sh 'ls'
