@@ -12,6 +12,7 @@ pipeline {
         sh 'echo "start"'
         sh 'echo "$VERSION"'
         sh 'mvn clean'
+        sh 'mvn install'
       }
     }
   
