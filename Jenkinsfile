@@ -25,5 +25,11 @@ pipeline {
       }
     }
     
+    stage('docker_push') {
+      steps {
+    	sh 'sudo docker push diqmwl/$ARTIFACT:$VERSION'
+      }
+    }
+    
   }
 }
