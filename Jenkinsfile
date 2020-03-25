@@ -11,6 +11,7 @@ pipeline {
       steps {
         sh 'echo "start"'
         sh 'echo "$VERSION"'
+        sh 'mvn clean'
       }
     }
   
