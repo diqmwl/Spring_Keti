@@ -35,7 +35,7 @@ pipeline {
       steps {
   		dir("config") {
   		  sh 'ls'
-  		  sh 'sed -i "17s/docversion/$ARTIFACT:$VERSION/g" spring.yaml'
+  		  sh "sed -i "17s/docversion/$ARTIFACT:$VERSION/g" spring.yaml"
   		  sh 'cat spring.yaml'
     	  sh 'sudo kubectl apply -f spring.yaml'
     	}
