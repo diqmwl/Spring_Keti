@@ -18,9 +18,8 @@ pipeline {
       steps {
       	dir("config") {
     		sh 'pwd'
+    		sh 'sudo docker build --build-arg IMAGE_ARG=$ARTIFACT$VERSION -t diqmwl/keti_spring:2.0 .'
 		}
-      	sh 'ls'
-        sh 'sudo docker build --build-arg IMAGE_ARG=$ARTIFACT$VERSION -t diqmwl/keti_spring:2.0 .'
       }
     }
     
