@@ -34,7 +34,7 @@ pipeline {
     stage('kubernetes_deploy') {
       steps {
   		dir("config") {
-  		  sh 'sed -i "18s/docversion/sdsds/g" spring.yaml'
+  		  sh 'sed -i "17s/docversion/$ARTIFACT:$VERSION/g" spring.yaml'
   		  sh 'cat spring.yaml'
     	  sh 'sudo kubectl apply -f spring.yaml'
     	}
