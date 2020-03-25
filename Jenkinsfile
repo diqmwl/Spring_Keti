@@ -16,9 +16,9 @@ pipeline {
   
     stage('docker_build') {
       steps {
-      	dir("config") {
-    		sh 'pwd'
-    		sh 'sudo docker build --build-arg IMAGE_ARG=$ARTIFACT$VERSION -t diqmwl/keti_spring:2.0 .'
+		dir("config") {
+	    	sh 'sudo cp $HOME/workspace/Spring_Keti_master/target/$ARTIFACT-$VERSION.war ./'
+    		sh 'sudo docker build --build-arg IMAGE_ARG=$ARTIFACT-$VERSION -t diqmwl/keti_spring:2.0 .'
 		}
       }
     }
