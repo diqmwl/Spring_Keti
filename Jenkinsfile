@@ -20,7 +20,7 @@ pipeline {
       steps {
 		dir("config") {
 	    	sh 'sudo cp $HOME/workspace/Spring_Keti_master/target/$ARTIFACT-$VERSION.war ./'
-    		sh 'sudo docker build --build-arg IMAGE_ARG=$ARTIFACT-$VERSION -t diqmwl/keti_spring:2.0 .'
+    		sh 'sudo docker build --build-arg IMAGE_ARG=$ARTIFACT-$VERSION -t diqmwl/$ARTIFACT:$VERSION .'
 		}
       }
     }
