@@ -38,7 +38,6 @@
 									<img class="pop_img" alt="차량 모니터링 서비스" src="${pageContext.request.contextPath}/resources/aiaas/kr/images/logo_arrive_svc.png">
 								</div>
 								<div class="pop_bottom data_bottom">
-
 									<p>
 										고품질 차량 출도착 서비스를<br> 경험하세요
 									</p>

@@ -6,7 +6,7 @@
 <%@include file="common/meta.jsp"%>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/aiaas/kr/css/test.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/aiaas/kr/css/broken.css">
   
 
 </head>
@@ -59,7 +59,7 @@
 					</div>
 
 					<div class="row row-xs">
-						<div class="col-sm-6 col-lg-3">
+						<div class="col-sm-6 col-lg-3 mg-t-10">
 							<div class="card card-body">
 								<h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Conversion Rate</h6>
 								<div class="d-flex d-lg-block d-xl-flex align-items-end">
@@ -68,13 +68,6 @@
 										<span class="tx-medium tx-success">1.2% <i class="icon ion-md-arrow-up"></i></span> than last week
 									</p>
 								</div>
-								<div class="chart-three">
-									<div id="flotChart3" class="flot-chart ht-30" style="padding: 0px; position: relative;">
-										<canvas class="flot-base" width="328" height="30" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 328px; height: 30px;"></canvas>
-										<canvas class="flot-overlay" width="328" height="30" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 328px; height: 30px;"></canvas>
-									</div>
-								</div>
-								<!-- chart-three -->
 							</div>
 						</div>
 						<!-- col -->
@@ -87,13 +80,6 @@
 										<span class="tx-medium tx-danger">0.7% <i class="icon ion-md-arrow-down"></i></span> than last week
 									</p>
 								</div>
-								<div class="chart-three">
-									<div id="flotChart4" class="flot-chart ht-30" style="padding: 0px; position: relative;">
-										<canvas class="flot-base" width="328" height="30" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 328px; height: 30px;"></canvas>
-										<canvas class="flot-overlay" width="328" height="30" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 328px; height: 30px;"></canvas>
-									</div>
-								</div>
-								<!-- chart-three -->
 							</div>
 						</div>
 						<!-- col -->
@@ -106,13 +92,6 @@
 										<span class="tx-medium tx-danger">0.3% <i class="icon ion-md-arrow-down"></i></span> than last week
 									</p>
 								</div>
-								<div class="chart-three">
-									<div id="flotChart5" class="flot-chart ht-30" style="padding: 0px; position: relative;">
-										<canvas class="flot-base" width="328" height="30" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 328px; height: 30px;"></canvas>
-										<canvas class="flot-overlay" width="328" height="30" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 328px; height: 30px;"></canvas>
-									</div>
-								</div>
-								<!-- chart-three -->
 							</div>
 						</div>
 						<!-- col -->
@@ -125,19 +104,48 @@
 										<span class="tx-medium tx-success">2.1% <i class="icon ion-md-arrow-up"></i></span> than last week
 									</p>
 								</div>
-								<div class="chart-three">
-									<div id="flotChart6" class="flot-chart ht-30" style="padding: 0px; position: relative;">
-										<canvas class="flot-base" width="328" height="30" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 328px; height: 30px;"></canvas>
-										<canvas class="flot-overlay" width="328" height="30" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 328px; height: 30px;"></canvas>
+							</div>
+						</div>
+						<div class="col-lg-12 col-sm-12 col-xl-12 mg-t-10">
+							<div class="card">
+								<div class="card-body pos-relative pd-0">
+									<div class="pos-absolute t-20 l-20 wd-xl-100p z-index-10">
+										<div class="row">
+											<div class="col-sm-5">
+												<h3 class="tx-normal tx-rubik tx-spacing--2 mg-b-5">$620,076</h3>
+												<h6
+													class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-10">MRR
+													Growth</h6>
+												<p class="mg-b-0 tx-12 tx-color-03">
+													Measure How Fast You’re Growing Monthly Recurring Revenue.
+													<a href="">Learn More</a>
+												</p>
+											</div>
+											<!-- col -->
+											<div class="col-sm-5 mg-t-20 mg-sm-t-0">
+												<h3 class="tx-normal tx-rubik tx-spacing--2 mg-b-5">$1,200</h3>
+												<h6
+													class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-10">Avg.
+													MRR/Customer</h6>
+												<p class="mg-b-0 tx-12 tx-color-03">
+													The revenue generated per account on a monthly or yearly
+													basis. <a href="">Learn More</a>
+												</p>
+											</div>
+											<div class="col-sm-12 mg-t-10 mg-sm-t-0">
+												<img src="${pageContext.request.contextPath}/resources/aiaas/kr/images/main_chart.png" alt="차트 이미지">
+											</div>
+											<!-- col -->
+										</div>
+										<!-- row -->
 									</div>
 								</div>
-								<!-- chart-three -->
+								<!-- card-body -->
 							</div>
+							<!-- card -->
 						</div>
 						<!-- col -->
 						
-								<!-- card-body -->	
-
 					</div>
 
 				</div>
