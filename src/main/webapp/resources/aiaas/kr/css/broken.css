@@ -249,6 +249,14 @@
     color: #8392a5;
 }
 
+.main_chart{
+	display: block;
+	width: 80%;
+	margin: auto;
+}
+
+
+
 
 
 @media (min-width: 1200px) {

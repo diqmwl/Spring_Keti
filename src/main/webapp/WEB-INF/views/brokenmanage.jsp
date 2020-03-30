@@ -65,7 +65,7 @@
 								<div class="d-flex d-lg-block d-xl-flex align-items-end">
 									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">0.81%</h3>
 									<p class="tx-11 tx-color-03 mg-b-0">
-										<span class="tx-medium tx-success">1.2% <i class="icon ion-md-arrow-up"></i></span> than last week
+										<span class="tx-medium tx-success">1.2%</span> than last week
 									</p>
 								</div>
 							</div>
@@ -77,7 +77,7 @@
 								<div class="d-flex d-lg-block d-xl-flex align-items-end">
 									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">3,137</h3>
 									<p class="tx-11 tx-color-03 mg-b-0">
-										<span class="tx-medium tx-danger">0.7% <i class="icon ion-md-arrow-down"></i></span> than last week
+										<span class="tx-medium tx-danger">0.7%</span> than last week
 									</p>
 								</div>
 							</div>
@@ -89,7 +89,7 @@
 								<div class="d-flex d-lg-block d-xl-flex align-items-end">
 									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">$306.20</h3>
 									<p class="tx-11 tx-color-03 mg-b-0">
-										<span class="tx-medium tx-danger">0.3% <i class="icon ion-md-arrow-down"></i></span> than last week
+										<span class="tx-medium tx-danger">0.3%</span> than last week
 									</p>
 								</div>
 							</div>
@@ -101,7 +101,7 @@
 								<div class="d-flex d-lg-block d-xl-flex align-items-end">
 									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">1,650</h3>
 									<p class="tx-11 tx-color-03 mg-b-0">
-										<span class="tx-medium tx-success">2.1% <i class="icon ion-md-arrow-up"></i></span> than last week
+										<span class="tx-medium tx-success">2.1%</span> than last week
 									</p>
 								</div>
 							</div>
@@ -133,9 +133,24 @@
 												</p>
 											</div>
 											<div class="col-sm-12 mg-t-10 mg-sm-t-0">
-												<img src="${pageContext.request.contextPath}/resources/aiaas/kr/images/main_chart.png" alt="차트 이미지">
+												<img class="main_chart" src="${pageContext.request.contextPath}/resources/aiaas/kr/images/main_chart.png" alt="차트 이미지">
 											</div>
 											<!-- col -->
+										</div>
+										<!-- row -->
+									</div>
+								</div>
+								<!-- card-body -->
+							</div>
+							<!-- card -->
+						</div>
+						
+						<div class="col-lg-12 col-sm-12 col-xl-12 mg-t-10">
+							<div class="card">
+								<div class="card-body pos-relative pd-0">
+									<div class="pos-absolute t-20 l-20 wd-xl-100p z-index-10">
+										<div class="row">
+											
 										</div>
 										<!-- row -->
 									</div>
