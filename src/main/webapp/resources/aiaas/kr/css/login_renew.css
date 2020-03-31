@@ -91,7 +91,7 @@
 .login_box .txt_box .signup_desc {color:#0080df; font-size:18px; font-weight:300; margin:30px 0;line-height:24px;}
 .login_box .txt_box .signup_desc span {font-weight:400;}
 .login_box .txt_box .signup_desc strong {font-weight:bold; display:block;}
-.login_box .txt_box .btn_sign {display:block;width:332px; height:48px; border-radius:44px; /* -webkit-border-radius:44px; -ms-border-radius:44px; -khtml-border-radius:44px; -o-border-radius:44px; [불필요 요소 삭제:20190726 YMJ]*/ background:#fff url(../images/logo_google.png) 60px 50% no-repeat; background-size:22px; line-height:47px; font-size:20px; font-weight:bold; color:#002b49; border:1px solid #002b49; margin:20px auto ; text-align:center; transition:all 0.3s ease-out;}
+.login_box .txt_box .btn_sign {display:block;width:250px; height:48px; border-radius:44px; /* -webkit-border-radius:44px; -ms-border-radius:44px; -khtml-border-radius:44px; -o-border-radius:44px; [불필요 요소 삭제:20190726 YMJ]*/ background:#fff url(../images/logo_google.png) 60px 50% no-repeat; background-size:22px; line-height:47px; font-size:20px; font-weight:bold; color:#002b49; border:1px solid #002b49; margin:20px auto ; text-align:center; transition:all 0.3s ease-out;}
 .login_box .txt_box .btn_sign:hover {box-shadow:0 3px 8px 0 rgba(0,0,0,0.1), 0 5px 20px 0 rgba(0,0,0,0.1); transition:all 0.3s ease-out;}
 .login_box .txt_box > span {display:block; font-size:21px; font-weight:300; color:#0080df; margin:0 0 70px 0;}
 
@@ -102,8 +102,8 @@
 .signup_box .txt_box > span{ }
 .signup_box .txt_box > span.signup_complete{padding: 45px 0 0 0;line-height: 25px;}
 
-.login_box .txt_box .login_area {text-align: center;display: inline-block;float:left;margin: 0 0 70px 0;}
-.login_box .txt_box .login_area p{font-size:28px; color:#002b49; height:34px; line-height:37px; animation-fill-mode:unset; font-weight:bold; letter-spacing:-1px; }
+.login_box .txt_box .login_area {text-align: center;display: inline-block;margin: 0;}
+.login_box .txt_box .login_area p{font-size:3.6em; color:#002b49; height:34px; line-height:37px; animation-fill-mode:unset; font-weight:bold; letter-spacing:-1px; }
 .login_box .txt_box .login_area span {display:block; font-size:21px; font-weight:400; color:#0080df;clear: both;}
 
 .delay-1 {animation-delay:0.5s}
@@ -141,7 +141,7 @@
 .txt_box .notice_box .aca_box .box_body {background: none;}
 .txt_box .notice_box .aca_box a{position: absolute;width:100px; height:35px;line-height: 35px; display: block; left: 50%;bottom: 20px;border-radius: 17.5px;margin: 0 0 0 -50px;background: #5e77ff;; color:#fff; border: none;font-weight: 500; font-size: 14px;}
 .txt_box .notice_box .boxarea .box_body .pop_cont h5 {padding: 62px 0 0 20px;text-align: left;line-height: 1.27;font-weight:normal;letter-spacing: -0.83px;color: #5e77ff;font-size:22px;}
-.txt_box .notice_box .boxarea .box_body .data_bottom {background: transparent;}
+.txt_box .notice_box .boxarea .box_body .data_bottom {background: white;}
 .txt_box .notice_box .boxarea .box_body .data_bottom p {letter-spacing: -1px;color: #404a92;text-align: center;font-weight: 500;}
 
 .login_box .txt_box .img_box {position:relative; width:260px; height:145px; margin:0 auto;}
@@ -413,7 +413,7 @@
 	.login_box {width:100%; margin:100px auto 50px;}
 	.login_box .txt_box p {font-size:20px; width: 100%;}
 	.login_box .link_box {width:100%;}
-	.login_box .txt_box .btn_sign{width:80%; font-size:15px; height:42px;background:#fff url(../images/logo_google.png) 17% 50% no-repeat;background-size:20px; line-height:42px; text-indent:32%; margin:20px auto 15px;}
+	.login_box .txt_box .btn_sign{width:80%; font-size:15px; height:42px;background:#fff; background-size:20px; line-height:42px; text-indent:32%; margin:20px auto 15px;}
 	.login_box .txt_box > span {font-size:16px; margin:0 0 40px 0;width:100%;}
 	.login_box .txt_box .img_box {width:100%; height:200px;padding:100px 0 0 0;}
 	.login_box .txt_box .img_box img {width:80%; left:50%; margin:0 0 0 -130px; animation:3s linear 0s infinite alternate cloud_m; -webkit-animation:3s linear 0s infinite alternate cloud_m;}
@@ -797,3 +797,13 @@
     margin-left: -4px;
 }
 
+.top_img{
+   width: 60%;
+   vertical-align: middle;
+}
+
+.top_box{
+   vertical-align: middle;
+   margin-bottom: 30px;
+   margin-right: -80px;
+}

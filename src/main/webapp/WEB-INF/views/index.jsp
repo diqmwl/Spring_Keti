@@ -16,6 +16,7 @@
 			<div class="login_box">
 
 				<div class="txt_box">
+	            <div class="top_box">
 					<div class="notice_box">
 						<div class="boxarea left_box animated fadeInDown ">
 							<div class="box_body">
@@ -49,12 +50,14 @@
 					</div>
 					<div class="login_area">
 						<p class="animated fadeInUp">빅데이터 분석은 Keti.pf</p>
-						<span style="margin-top: 5px;" class="animated fadeInUp delay-1">차량별 / <strong>다양한 데이터 분석 서비스 제공</strong></span>
+						<span style="margin-top: 10px;" class="animated fadeInUp delay-1">차량별 / <strong>다양한 데이터 분석 서비스 제공</strong></span>
 						<div class="link_box">
 							<a class="btn_sign animated fadeInUp delay-2"
-								href="#main_content">지금 시작하기</a>
+								href="#main_content">바로 시작하기</a>
 						</div>
 					</div>
+					<img class="top_img" alt="" src="${pageContext.request.contextPath}/resources/aiaas/kr/images/banner.png">
+				</div>
 					<div class="stn_landing">
 						<p class="stn_landing_tit">
 							<span>빅데이터 분석 기반의 다양한 최신 서비스</span>
