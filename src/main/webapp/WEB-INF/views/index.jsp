@@ -91,7 +91,7 @@
 										</div>
 									</div>
 								</li>								
-								<li onclick="window.open('http://keti-carbigdata.org:8891/index')" title="차량 정보 시각화 대시보드 이동">
+								<li onclick="window.open('https://keti-carbigdata.org:8891/index')" title="차량 정보 시각화 대시보드 이동">
 									<div class="clear_li">
 										<header
 											style="background-image: url(&quot;/resources/aiaas/kr/images/logo_dash_svc.png&quot;);">
@@ -105,7 +105,7 @@
 										</div>
 									</div>
 								</li>								
-								<li onclick="window.open('http://keti-carbigdata.org:8891/index?page=1')" title="차량 고장 예측 및 분석 이동">
+								<li onclick="window.open('https://keti-carbigdata.org:8891/index?page=1')" title="차량 고장 예측 및 분석 이동">
 									<div class="clear_li">
 										<header
 											style="background-image: url(&quot;/resources/aiaas/kr/images/logo_dtc_svc.png&quot;);">
