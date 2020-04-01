@@ -239,9 +239,8 @@
 				<!--제목 부분-->
 				<p>권장 브라우저 안내</p>
 				<!--내용 부분-->
-				<span>마음 AI는 <strong>크롬(Chrome) 브라우저</strong>에 최적화 되어있습니다. <span
-					style="display: block; margin-top: 4px;">크롬 브라우저에서 다양한 마음
-						AI의 엔진을 만나보세요!</span>
+				<span><strong>크롬(Chrome) 브라우저</strong>에 최적화 되어있습니다. <span
+					style="display: block; margin-top: 4px;">크롬 브라우저에서 만나보세요!</span>
 				</span>
 			</div>
 			<!-- //.pop_bd -->
