@@ -11,6 +11,8 @@
 			<security:user-service>
 				<security:user name="keti" authorities="ROLE_USER"
 					password="{noop}keti1234" />
+				<security:user name="guest" authorities="ROLE_USER"
+					password="{noop}guest12#$" />
 			</security:user-service>
 		</security:authentication-provider>
 	</security:authentication-manager>
