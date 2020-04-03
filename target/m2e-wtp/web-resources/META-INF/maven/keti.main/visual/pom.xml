@@ -7,7 +7,7 @@
 	<artifactId>visual</artifactId>
 	<name>keti_main</name>
 	<packaging>war</packaging>
-	<version>1.1.0-BUILD-SNAPSHOT</version>
+	<version>1.1.1-BUILD-SNAPSHOT</version>
 	<properties>
 		<java-version>1.8</java-version>
 		<org.springframework-version>5.2.3.RELEASE</org.springframework-version>
@@ -147,7 +147,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.12</version>
+			<version>1.18.10</version>
 			<scope>provided</scope>
 		</dependency>
 

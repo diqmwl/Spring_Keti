@@ -6,6 +6,8 @@ import org.influxdb.annotation.Measurement;
 import lombok.Getter;
 import lombok.Setter;
 
+@Getter
+@Setter
 @Measurement(name = "VISIT_RULE")
 public class Arrive_Visit {
 
@@ -27,51 +29,4 @@ public class Arrive_Visit {
 	@Column(name = "car_id")
 	private String car_id;
 	
-	public String getTime() {
-		return time;
-	}
-
-	public void setTime(String time) {
-		this.time = time;
-	}
-
-	public String getGPS_LAT() {
-		return GPS_LAT;
-	}
-
-	public void setGPS_LAT(String gPS_LAT) {
-		GPS_LAT = gPS_LAT;
-	}
-
-	public String getGPS_LONG() {
-		return GPS_LONG;
-	}
-
-	public void setGPS_LONG(String gPS_LONG) {
-		GPS_LONG = gPS_LONG;
-	}
-
-	public String getVISIT_END() {
-		return VISIT_END;
-	}
-
-	public void setVISIT_END(String vISIT_END) {
-		VISIT_END = vISIT_END;
-	}
-
-	public String getVISIT_START() {
-		return VISIT_START;
-	}
-
-	public void setVISIT_START(String vISIT_START) {
-		VISIT_START = vISIT_START;
-	}
-
-	public String getCar_id() {
-		return car_id;
-	}
-
-	public void setCar_id(String car_id) {
-		this.car_id = car_id;
-	}
 }

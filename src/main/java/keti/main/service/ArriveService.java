@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import keti.main.dao.ArriveDAO;
 import keti.main.model.Arrive_Car;
-import keti.main.model.Arrive_Factory;
 
 @Service
 public class ArriveService {
