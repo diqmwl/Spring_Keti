@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -11,6 +11,7 @@
 </head>
 
 <script	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/broken.js"></script>
 <body>
 
@@ -157,10 +158,8 @@
 													basis. <a href="">Learn More</a>
 												</p>
 											</div>
-											<div class="col-sm-12 mg-t-10 mg-sm-t-0">
-												<img class="main_chart"
-													src="${pageContext.request.contextPath}/resources/aiaas/kr/images/main_chart.png"
-													alt="차트 이미지">
+											<div id="chart_div" class="col-sm-12 mg-t-10 mg-sm-t-0">
+
 											</div>
 											<!-- col -->
 										</div>
@@ -176,10 +175,11 @@
 							<div class="card">
 								<div class="card-body pos-relative pd-0">
 									<div class="pos-absolute t-20 l-20 wd-xl-100p z-index-10">
-										<div class="row">
+										<div id="row_container" class="row">
 											<div class="table_box">
 												<div class="total_div">
-													<span class="total"><em>${pagination.listCnt}</em>개 차량</span>
+												<fmt:parseNumber var= "listCnt" integerOnly= "true" value= "${pagination.listCnt}"/>
+													<span class="total"><em><c:out value = "${listCnt}"/></em>개 차량</span>
 													<div class="form-group select_num">
 														<select class="form-control" id="sel1">
 															<option <c:out value="${pagination.listSize == '10' ? 'selected' : ''}"/>>10개씩</option>
@@ -189,7 +189,7 @@
 														</select>
 													</div>
 												</div>
-												<table id="table_id"
+												<table id="rmc_table"
 													class="table table-striped table-bordered"
 													style="width: 100%">
 													<thead>
@@ -203,7 +203,7 @@
 													</thead>
 													<tbody>
 														<c:forEach var="rmc" items="${rmc_list}">
-															<tr>
+															<tr id = "${rmc.car_id}">
 																<td>${rmc.time }</td>
 																<td>${rmc.car_id }</td>
 																<td>${rmc.DTC }</td>

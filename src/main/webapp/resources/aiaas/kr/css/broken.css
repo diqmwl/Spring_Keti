@@ -47,7 +47,7 @@
   .breadcrumb-style3 .breadcrumb-item {
     font-size: 10px;
     font-weight: 600;
-    font-family: -apple-system, BlinkMacSystemFont, "Inter UI", Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter UI", sans-serif;
     letter-spacing: .5px;
     text-transform: uppercase;
     }
@@ -247,12 +247,6 @@
 
 .tx-color-03 {
     color: #8392a5;
-}
-
-.main_chart{
-	display: block;
-	width: 80%;
-	margin: auto;
 }
 
 .table_box{
