@@ -12,7 +12,7 @@
 				</h1>
 				<!--.sta-->
 				<div class="sta">
-					<a href="/login/pricingPage?lang=ko" class="go_price">플랫폼 <span>설명 보기</span></a>					
+					<a href="/info" class="go_price">플랫폼 <span>설명 보기</span></a>					
 					<!--.etcMenu-->
 
 					<a href="javascript:document.getElementById('logout').submit()" class="logout"><span>로그아웃</span></a>

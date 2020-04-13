@@ -1,5 +1,7 @@
 package keti.main.dao;
 
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +12,7 @@ import org.influxdb.InfluxDBFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import keti.main.model.Broken_Chart;
 import keti.main.model.Broken_RMC;
 
 @Repository
@@ -33,6 +36,23 @@ public class BrokenDAO {
 		param.put("listSize", listSize);
 		param.put("offset", offset);
 		return sqlSession.selectList(Namespace+".selectRMC", param);
+	}
+
+	public List<Object> getChart() {
+		// TODO Auto-generated method stub
+		List<Object> listdata = new ArrayList<Object>();
+		List<Broken_Chart> charts = sqlSession.selectList(Namespace+".getChart");
+		String[] temp = {"date", "count"};
+		listdata.add(temp);
+		if (charts != null) { 
+		   for (int i=0;i<charts.size();i++){
+			   List<Object> temp2 = new ArrayList<Object>();
+			   temp2.add(charts.get(i).getDate());
+			   temp2.add(charts.get(i).getCount());
+		    listdata.add(temp2);
+		   } 
+		} 
+		return listdata;
 	}
 
 }

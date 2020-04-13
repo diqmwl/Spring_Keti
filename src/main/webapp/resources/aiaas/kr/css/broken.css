@@ -282,6 +282,11 @@
 	float: right;
 }
 
+#dashboard_div{
+	width: 100%;
+}
+
+
 @media (min-width: 1200px) {
   .ht-xl-5 {
     height: 5px; }

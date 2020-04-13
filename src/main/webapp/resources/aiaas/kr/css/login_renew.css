@@ -91,7 +91,7 @@
 .login_box .txt_box .signup_desc {color:#0080df; font-size:18px; font-weight:300; margin:30px 0;line-height:24px;}
 .login_box .txt_box .signup_desc span {font-weight:400;}
 .login_box .txt_box .signup_desc strong {font-weight:bold; display:block;}
-.login_box .txt_box .btn_sign {display:block;width:250px; height:48px; border-radius:44px; /* -webkit-border-radius:44px; -ms-border-radius:44px; -khtml-border-radius:44px; -o-border-radius:44px; [불필요 요소 삭제:20190726 YMJ]*/ background:#fff url(../images/logo_google.png) 60px 50% no-repeat; background-size:22px; line-height:47px; font-size:20px; font-weight:bold; color:#002b49; border:1px solid #002b49; margin:20px auto ; text-align:center; transition:all 0.3s ease-out;}
+.login_box .txt_box .btn_sign {display:block;width:250px; height:48px; border-radius:44px; background:#fff 60px 50% no-repeat; background-size:22px; line-height:47px; font-size:20px; font-weight:bold; color:#002b49; border:1px solid #002b49; margin:20px auto ; text-align:center; transition:all 0.3s ease-out;}
 .login_box .txt_box .btn_sign:hover {box-shadow:0 3px 8px 0 rgba(0,0,0,0.1), 0 5px 20px 0 rgba(0,0,0,0.1); transition:all 0.3s ease-out;}
 .login_box .txt_box > span {display:block; font-size:21px; font-weight:300; color:#0080df; margin:0 0 70px 0;}
 
@@ -133,7 +133,7 @@
 .txt_box .notice_box .boxarea .box_body .pop_bottom p {box-sizing: border-box;height: 108px;letter-spacing: -1px;font-size:14px; font-weight: 400; padding: 6px 0 0 0;color: #fff;line-height: normal;}
 .txt_box .notice_box .boxarea .box_body p{color:#343f4f;font-size:17px;line-height: 24.5px; padding: 88px 0 0 0;}
 .txt_box .notice_box .boxarea .box_body button{width:30px; height:35px; margin:15px auto 0;color:#fff; font-weight: 500;cursor:pointer; font-size: 14px;}
-.txt_box .notice_box .left_box {background:#fff url("../../common/images/pop_voicealbum.png") 50% 0 no-repeat; height: 250px;background-size: contain;position:relative; float: right; margin: 0 10px 0 10px;box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);}
+.txt_box .notice_box .left_box {background:#fff 50% 0 no-repeat; height: 250px;background-size: contain;position:relative; float: right; margin: 0 10px 0 10px;box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);}
 .txt_box .notice_box .left_box .box_top{background:none;}
 .txt_box .notice_box .left_box .box_body a{position: absolute;height:35px;line-height: 35px;width:101px; display: block; left: 50%;bottom: 20px;border-radius: 17.5px;margin: 0 0 0 -50px;background: #7d71d1; color: #fff; border: none; font-weight: 400; font-size: 14px;}
 .txt_box .notice_box .aca_box{float:right; height: 250px; background-size: contain;position: relative; margin: 0 5px;}

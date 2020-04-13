@@ -2,9 +2,10 @@
 <!DOCTYPE configuration 
     PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
-    <configuration>
-    
-        <typeAliases>
-            <typeAlias type="keti.main.model.Broken_RMC" alias="rmc"/>
-        </typeAliases>
-    </configuration>
+<configuration>
+	<typeAliases>
+		<typeAlias type="keti.main.model.Broken_RMC" alias="rmc" />
+		<typeAlias type="keti.main.model.Broken_Chart" alias="chart" />	
+	</typeAliases>
+
+</configuration>

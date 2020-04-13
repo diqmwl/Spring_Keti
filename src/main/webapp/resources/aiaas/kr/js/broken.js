@@ -9,16 +9,33 @@ $(document).ready(function() {
 
     google.charts.load('current', {'packages':['bar']});
     google.charts.setOnLoadCallback(drawChart);
+    
+    //표 클릭시 detail페이지로
+    $('tr').click(function(){
+    	location.href = "/brokenSVC/detail?id="+$(this).attr('id');
+    });
+    
+})
+	
+	function get_data(){ 
+	var result
+	$.ajax({
+        method:"GET",
+        url:"/brokenSVC/getChart",
+        async:false,
+        success:function(response){
+            result = response;
+        }
+    });
+	return result
+	}
+
 
     function drawChart() {
-
-      var data = google.visualization.arrayToDataTable( [
-          ['Year', 'Sales', 'Expenses', 'Profit'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2017', 1030, 540, 350]
-        ]);
+	  var chart_data = get_data();
+	  console.log(chart_data)
+	  
+      var data = google.visualization.arrayToDataTable(chart_data);
 
       var options = {
         chart: {
@@ -31,13 +48,26 @@ $(document).ready(function() {
         	position: 'bottom'
         },
         height: 500,
-        colors: ['#1b9e77', '#d95f02', '#7570b3']
+        colors: ['#0072BB'],
       };
+      
+      var control = new google.visualization.ControlWrapper({
+    	    controlType: 'ChartRangeFilter',
+    	    containerId: 'dash_div',
+    	    options: {
+    	      filterColumnIndex: 0
+    	    }
+    	  });
+      
+      var myDashboard = new google.charts.Bar(document.getElementById('chart_div'));
 
       var chart = new google.charts.Bar(document.getElementById('chart_div'));
 
       chart.draw(data, google.charts.Bar.convertOptions(options))
     
+      
+      
+      
       //create trigger to resizeEnd event     
       $(window).resize(function() {
           if(this.resizeTO) clearTimeout(this.resizeTO);
@@ -51,13 +81,6 @@ $(document).ready(function() {
           drawChart(data);
       });
     }
-    
-    //표 클릭시 detail페이지로
-    $('tr').click(function(){
-    	location.href = "/brokenSVC_detail?id="+$(this).attr('id');
-    });
-    
-})
 
 //이전 버튼 이벤트
 function fn_prev(page, range, rangeSize, listSize) {

@@ -1,5 +1,6 @@
 package keti.main.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import keti.main.dao.BrokenDAO;
+import keti.main.model.Broken_Chart;
 import keti.main.model.Broken_RMC;
 
 @Service
@@ -22,6 +24,11 @@ public class BrokenService {
 
 	public int getCount() {
 		return brokenDAO.getCount();		
+	}
+
+	public List<Object> getChart() {
+		// TODO Auto-generated method stub
+		return brokenDAO.getChart();
 	}
 
 }

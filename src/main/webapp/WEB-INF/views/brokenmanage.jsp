@@ -137,29 +137,8 @@
 								<div class="card-body pos-relative pd-0">
 									<div class="pos-absolute t-20 l-20 wd-xl-100p z-index-10">
 										<div class="row">
-											<div class="col-sm-5">
-												<h3 class="tx-normal tx-rubik tx-spacing--2 mg-b-5">$620,076</h3>
-												<h6
-													class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-10">MRR
-													Growth</h6>
-												<p class="mg-b-0 tx-12 tx-color-03">
-													Measure How Fast You’re Growing Monthly Recurring Revenue.
-													<a href="">Learn More</a>
-												</p>
-											</div>
-											<!-- col -->
-											<div class="col-sm-5 mg-sm-t-0">
-												<h3 class="tx-normal tx-rubik tx-spacing--2 mg-b-5">$1,200</h3>
-												<h6
-													class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-10">Avg.
-													MRR/Customer</h6>
-												<p class="mg-b-0 tx-12 tx-color-03">
-													The revenue generated per account on a monthly or yearly
-													basis. <a href="">Learn More</a>
-												</p>
-											</div>
 											<div id="chart_div" class="col-sm-12 mg-t-10 mg-sm-t-0">
-
+												<!-- 차트 빈공간 -->
 											</div>
 											<!-- col -->
 										</div>

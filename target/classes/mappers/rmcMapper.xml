@@ -17,4 +17,8 @@
 		spn.code AND rmc.FMI = fmi.code order by time desc limit #{listSize} offset #{offset}
 	</select>
 
+	<select id="getChart" resultType="chart" fetchSize="1000">
+		select date_format(time, '%Y%m%d') as date, count(*) as count from MAIN_RMC group by date_format(time, '%Y%m%d') limit 7
+	</select>
+	
 </mapper>

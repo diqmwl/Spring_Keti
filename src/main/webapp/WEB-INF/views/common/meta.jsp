@@ -22,8 +22,6 @@
 	href="${pageContext.request.contextPath}/resources/aiaas/kr/css/pop_common.css">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/aiaas/kr/css/login_renew.css">
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/aiaas/kr/css/academy.css">
 
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -36,5 +34,4 @@
 
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/aiaas/kr/js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/resources/aiaas/kr/js/common.js"></script>
+

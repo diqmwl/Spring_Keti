@@ -190,88 +190,10 @@
 							</ul>
 						</div>
 					</div>
-					<!-- 푸터부분
-					<div class="add_box">
-						<h5 class="">빅데이터 서비스를 위한 플랫폼</h5>
-						<ul>
-							<li><a href="https://data.maum.ai" target="_blank"
-								title="마음 Data: 데이터 편집 툴">
-									<dl class="ico_data">
-										<dt>마음 Data: 데이터 편집 툴</dt>
-										<dd>TTS/MRC에 필요한 학습 데이터를 편집하는 툴입니다.</dd>
-									</dl>
-							</a></li>
-							<li><a href="https://minutes.maum.ai:9090/" target="_blank">
-									<dl class="ico_mindsedu">
-										<dt>마음 Minutes: 회의록 시스템</dt>
-										<dd>회의 중 녹음 파일만으로 회의록 작성과 관리를 한번에!</dd>
-									</dl>
-							</a></li>
-							<li><a href="https://voice.maum.ai" target="_blank"
-								title="마음 보이스"
-								onclick="alert('시범 서비스 운영중입니다. 서비스 사용을 원하시는 분은 대표메일 (hello@mindslab.ai)로 문의 바랍니다. \n\n정식 서비스 오픈까지 조금만 기다려주세요!');">
-									<dl class="ico_maumvoice">
-										<dt>
-											마음 VoiceBot: 음성봇<span>beta</span>
-										</dt>
-										<dd>24/7, 상담사의 반복적이고 소모적인 I/O Call을 대신해줍니다.</dd>
-									</dl>
-							</a></li>
-						</ul>
-					</div>
-				</div>
-			 		-->
 			</div>
 						<%@include file="common/footer.jsp"%>
 				</div>
 		</div>
-	
-	<!-- 2 .pop_confirm -->
-	<div class="pop_confirm">
-		<div class="pop_bg"></div>
-		<!-- .popWrap -->
-		<div class="popWrap" style="min-width: 460px">
-			<button class="pop_close" type="button">닫기</button>
-			<!-- .pop_bd -->
-			<div class="pop_bd">
-				<!--아이콘 부분-->
-				<em class="fas fa-exclamation-triangle"></em>
-				<!--제목 부분-->
-				<p>권장 브라우저 안내</p>
-				<!--내용 부분-->
-				<span><strong>크롬(Chrome) 브라우저</strong>에 최적화 되어있습니다. <span
-					style="display: block; margin-top: 4px;">크롬 브라우저에서 만나보세요!</span>
-				</span>
-			</div>
-			<!-- //.pop_bd -->
-			<!--창닫기 버튼 -->
-			<div class="btn">
-				<button class="btn_close btn_blue">창닫기</button>
-			</div>
-			<!--창닫기 버튼 -->
-		</div>
-		<!-- //.popWrap -->
-	</div>
-	<!-- //.pop_confirm -->
-
-	<script type="text/javascript">
-	window.onload = function(){
-		var browse = navigator.userAgent.toLowerCase();
-
-		if( (navigator.appName == 'Netscape' && browse.indexOf('trident') != -1) || (browse.indexOf("msie") != -1)) {
-			$('.pop_confirm').fadeIn();
-		}
-
-		// 공통 팝업창 닫기
-		$('.pop_close, .pop_bg, .btn a, .btn button').on('click', function () {
-			$('.pop_confirm').fadeOut(300);
-		});
-
- 		console.log ("로그")
-
-	};
-	</script>
-
 
 	<script type="text/javascript">   
 $(window).load(function() { 
