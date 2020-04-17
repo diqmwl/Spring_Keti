@@ -6,6 +6,7 @@ keti\main\model\Arrive_Car.class
 keti\main\service\ArriveService.class
 keti\main\controller\HomeController.class
 keti\main\dao\ArriveDAO.class
+keti\main\model\Broken_Chart.class
 keti\main\controller\SecurityController.class
 keti\main\dao\BrokenDAO.class
 keti\main\model\Broken_RMC.class

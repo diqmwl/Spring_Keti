@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="keti.main.mapper.rmcMapper">
+
+	<select id="getCount" resultType="int">
+		select count(*) FROM MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.FMI = fmi.code AND rmc.SPN = spn.code
+	</select>
+
+	<select id="selectRMC" parameterType="hashmap" resultType="rmc" fetchSize="1000">
+		select rmc.time, rmc.car_id, rmc.FMI, fmi.name_kr as FMI_NAME, rmc.SPN,
+		spn.description_kr as SPN_DESCRIPTION, rmc.DTC, rmc.CM,
+		rmc.DRIVE_SPEED, rmc.OC, rmc.RPM, rmc.GPS_LAT, rmc.GPS_LONG from
+		MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.SPN =
+		spn.code AND rmc.FMI = fmi.code order by time desc limit #{listSize} offset #{offset}
+	</select>
+
+	<select id="getChart" resultType="chart" fetchSize="1000">
+		select date_format(time, '%Y%m%d') as date, count(*) as count from MAIN_RMC group by date_format(time, '%Y%m%d') limit 7
+	</select>
+	
+</mapper>

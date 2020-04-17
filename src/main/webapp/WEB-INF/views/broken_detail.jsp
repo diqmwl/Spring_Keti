@@ -80,12 +80,13 @@
 						<div class="col-sm-6 col-lg-3 mg-t-10">
 							<div class="card card-body">
 								<h6
-									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Conversion
-									Rate</h6>
+									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">최저 DTC 발생량</h6>
 								<div class="d-flex d-lg-block d-xl-flex align-items-end">
-									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">0.81%</h3>
-									<p class="tx-11 tx-color-03 mg-b-0">
-										<span class="tx-medium tx-success">1.2%</span> than last week
+									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"><fmt:parseNumber var= "min" integerOnly= "true" value= "${chart_data.now_data.min}"/>${min}대</h3>
+									<p class="tx-11 tx-color-03 mg-b-0"> 
+										<span class="tx-medium ${chart_data.rate_data.min < 0 ? 'tx-success' : 'tx-danger'}">
+										<fmt:formatNumber value="${chart_data.rate_data.min}" pattern=".0"/>% ${chart_data.rate_data.min < 0 ? 'decrease' : 'increase'}
+										</span> than last week
 									</p>
 								</div>
 							</div>
@@ -94,12 +95,13 @@
 						<div class="col-sm-6 col-lg-3 mg-t-10 mg-sm-t-0">
 							<div class="card card-body">
 								<h6
-									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Unique
-									Purchases</h6>
+									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">최고 DTC 발생량</h6>
 								<div class="d-flex d-lg-block d-xl-flex align-items-end">
-									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">3,137</h3>
+									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"><fmt:parseNumber var= "max" integerOnly= "true" value= "${chart_data.now_data.max}"/>${max}대</h3>
 									<p class="tx-11 tx-color-03 mg-b-0">
-										<span class="tx-medium tx-danger">0.7%</span> than last week
+										<span class="tx-medium ${chart_data.rate_data.max < 0 ? 'tx-success' : 'tx-danger'}">
+										<fmt:formatNumber value="${chart_data.rate_data.max}" pattern=".0"/>% ${chart_data.rate_data.max < 0 ? 'decrease' : 'increase'}
+										</span> than last week
 									</p>
 								</div>
 							</div>
@@ -108,12 +110,13 @@
 						<div class="col-sm-6 col-lg-3 mg-t-10 mg-lg-t-0">
 							<div class="card card-body">
 								<h6
-									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Avg.
-									Order Value</h6>
+									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">평균 DTC 발생량</h6>
 								<div class="d-flex d-lg-block d-xl-flex align-items-end">
-									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">$306.20</h3>
+									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">${chart_data.now_data.avg }대</h3>
 									<p class="tx-11 tx-color-03 mg-b-0">
-										<span class="tx-medium tx-danger">0.3%</span> than last week
+										<span class="tx-medium ${chart_data.rate_data.avg < 0 ? 'tx-success' : 'tx-danger'}">
+										<fmt:formatNumber value="${chart_data.rate_data.avg}" pattern=".0"/>% ${chart_data.rate_data.avg < 0 ? 'decrease' : 'increase'}
+										</span> than last week
 									</p>
 								</div>
 							</div>
@@ -122,12 +125,13 @@
 						<div class="col-sm-6 col-lg-3 mg-t-10 mg-lg-t-0">
 							<div class="card card-body">
 								<h6
-									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Order
-									Quantity</h6>
+									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">주간 DTC 합계량</h6>
 								<div class="d-flex d-lg-block d-xl-flex align-items-end">
-									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">1,650</h3>
+									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"><fmt:parseNumber var= "sum" integerOnly= "true" value= "${chart_data.now_data.sum}"/>${sum}대</h3>
 									<p class="tx-11 tx-color-03 mg-b-0">
-										<span class="tx-medium tx-success">2.1%</span> than last week
+										<span class="tx-medium ${chart_data.rate_data.sum < 0 ? 'tx-success' : 'tx-danger'}">
+										<fmt:formatNumber value="${chart_data.rate_data.sum}" pattern=".0"/>% ${chart_data.rate_data.sum < 0 ? 'decrease' : 'increase'}
+										</span> than last week
 									</p>
 								</div>
 							</div>
@@ -137,29 +141,8 @@
 								<div class="card-body pos-relative pd-0">
 									<div class="pos-absolute t-20 l-20 wd-xl-100p z-index-10">
 										<div class="row">
-											<div class="col-sm-5">
-												<h3 class="tx-normal tx-rubik tx-spacing--2 mg-b-5">$620,076</h3>
-												<h6
-													class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-10">MRR
-													Growth</h6>
-												<p class="mg-b-0 tx-12 tx-color-03">
-													Measure How Fast You’re Growing Monthly Recurring Revenue.
-													<a href="">Learn More</a>
-												</p>
-											</div>
-											<!-- col -->
-											<div class="col-sm-5 mg-sm-t-0">
-												<h3 class="tx-normal tx-rubik tx-spacing--2 mg-b-5">$1,200</h3>
-												<h6
-													class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-10">Avg.
-													MRR/Customer</h6>
-												<p class="mg-b-0 tx-12 tx-color-03">
-													The revenue generated per account on a monthly or yearly
-													basis. <a href="">Learn More</a>
-												</p>
-											</div>
 											<div id="chart_div" class="col-sm-12 mg-t-10 mg-sm-t-0">
-
+												<!-- 차트 빈공간 -->
 											</div>
 											<!-- col -->
 										</div>
@@ -176,72 +159,7 @@
 								<div class="card-body pos-relative pd-0">
 									<div class="pos-absolute t-20 l-20 wd-xl-100p z-index-10">
 										<div id="row_container" class="row">
-											<div class="table_box">
-												<div class="total_div">
-												<fmt:parseNumber var= "listCnt" integerOnly= "true" value= "${pagination.listCnt}"/>
-													<span class="total"><em><c:out value = "${listCnt}"/></em>개 차량</span>
-													<div class="form-group select_num">
-														<select class="form-control" id="sel1">
-															<option <c:out value="${pagination.listSize == '10' ? 'selected' : ''}"/>>10개씩</option>
-															<option <c:out value="${pagination.listSize == '25' ? 'selected' : ''}"/>>25개씩</option>
-															<option <c:out value="${pagination.listSize == '50' ? 'selected' : ''}"/>>50개씩</option>
-															<option <c:out value="${pagination.listSize == '100' ? 'selected' : ''}"/>>100개씩</option>
-														</select>
-													</div>
-												</div>
-												<table id="rmc_table"
-													class="table table-striped table-bordered"
-													style="width: 100%">
-													<thead>
-														<tr>
-															<th>time</th>
-															<th>car_id</th>
-															<th>DTC</th>
-															<th>FMI</th>
-															<th>SPN</th>
-														</tr>
-													</thead>
-													<tbody>
-														<c:forEach var="rmc" items="${rmc_list}">
-															<tr id = "${rmc.car_id}">
-																<td>${rmc.time }</td>
-																<td>${rmc.car_id }</td>
-																<td>${rmc.DTC }</td>
-																<td>${rmc.FMI_NAME }</td>
-																<td>${rmc.SPN }</td>
-															</tr>
-														</c:forEach>
-													</tbody>
-												</table>
-
-												<div class="paginationBox">
-													<ul class="pagination">
-														<c:if test="${pagination.prev}">
-															<li class="page-item ">
-																<a class="page-link" href="#" onClick="fn_prev('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}', '${pagination.listSize}')">이전</a>
-															</li>
-														</c:if>
-
-														<c:forEach begin="${pagination.startPage}" end="${pagination.endPage}" var="idx">
-															<li	class="page-item <c:out value="${pagination.page == idx ? 'active' : ''}"/> ">
-																<a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination.range}', '${pagination.rangeSize}' ,'${pagination.listSize}')">${idx}</a>
-															</li>
-
-														</c:forEach>
-
-														<c:if test="${pagination.next}">
-															<li class="next-item">
-																<a class="page-link" href="#" onClick="fn_next('${pagination.range}', '${pagination.range}', '${pagination.rangeSize}', '${pagination.listSize}')">다음</a>
-															</li>
-														</c:if>
-
-													</ul>
-
-												</div>
-											</div>
-											<!-- pagination{e} -->
-
-
+											
 										</div>
 										<!-- row -->
 									</div>

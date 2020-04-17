@@ -18,7 +18,11 @@
 	</select>
 
 	<select id="getChart" resultType="chart" fetchSize="1000">
-		select date_format(time, '%Y%m%d') as date, count(*) as count from MAIN_RMC group by date_format(time, '%Y%m%d') limit 7
+		select date_format(time, '%Y%m%d') as date, count(*) as count from MAIN_RMC group by date_format(time, '%Y%m%d') order by date desc limit 7
+	</select>
+	
+	<select id="getLastChart" resultType="chart" fetchSize="1000">
+		select date_format(time, '%Y%m%d') as date, count(*) as count from MAIN_RMC group by date_format(time, '%Y%m%d') order by date desc limit 7 offset 7
 	</select>
 	
 </mapper>

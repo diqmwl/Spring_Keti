@@ -33,6 +33,7 @@ public class IndexController {
 		pagination.setListSize(listSize);
 		pagination.pageInfo(page, range, brokenService.getCount());
 
+		model.addAttribute("chart_data",brokenService.getAllProcess_Chart());
 		model.addAttribute("pagination", pagination);
 		model.addAttribute("rmc_list",brokenService.getRMC(listSize,(pagination.getPage()-1) * listSize));
 		return "brokenmanage";

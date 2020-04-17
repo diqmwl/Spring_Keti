@@ -39,13 +39,12 @@ public class BrokenDAO {
 	}
 
 	public List<Object> getChart() {
-		// TODO Auto-generated method stub
 		List<Object> listdata = new ArrayList<Object>();
 		List<Broken_Chart> charts = sqlSession.selectList(Namespace+".getChart");
 		String[] temp = {"date", "count"};
 		listdata.add(temp);
 		if (charts != null) { 
-		   for (int i=0;i<charts.size();i++){
+		   for (int i=charts.size()-1; i>=0; i--){
 			   List<Object> temp2 = new ArrayList<Object>();
 			   temp2.add(charts.get(i).getDate());
 			   temp2.add(charts.get(i).getCount());
@@ -54,5 +53,12 @@ public class BrokenDAO {
 		} 
 		return listdata;
 	}
+	
+	public List<Broken_Chart> getProcess_Chart() {
+		return sqlSession.selectList(Namespace+".getChart");
+	}
 
+	public List<Broken_Chart> getProcess_LastChart() {
+		return sqlSession.selectList(Namespace+".getLastChart");
+	}
 }

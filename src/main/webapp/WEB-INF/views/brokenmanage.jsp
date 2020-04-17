@@ -80,12 +80,13 @@
 						<div class="col-sm-6 col-lg-3 mg-t-10">
 							<div class="card card-body">
 								<h6
-									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Conversion
-									Rate</h6>
+									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">최저 DTC 발생량</h6>
 								<div class="d-flex d-lg-block d-xl-flex align-items-end">
-									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">0.81%</h3>
-									<p class="tx-11 tx-color-03 mg-b-0">
-										<span class="tx-medium tx-success">1.2%</span> than last week
+									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"><fmt:parseNumber var= "min" integerOnly= "true" value= "${chart_data.now_data.min}"/>${min}대</h3>
+									<p class="tx-11 tx-color-03 mg-b-0"> 
+										<span class="tx-medium ${chart_data.rate_data.min < 0 ? 'tx-success' : 'tx-danger'}">
+										<fmt:formatNumber value="${chart_data.rate_data.min}" pattern=".0"/>% ${chart_data.rate_data.min < 0 ? 'decrease' : 'increase'}
+										</span> than last week
 									</p>
 								</div>
 							</div>
@@ -94,12 +95,13 @@
 						<div class="col-sm-6 col-lg-3 mg-t-10 mg-sm-t-0">
 							<div class="card card-body">
 								<h6
-									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Unique
-									Purchases</h6>
+									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">최고 DTC 발생량</h6>
 								<div class="d-flex d-lg-block d-xl-flex align-items-end">
-									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">3,137</h3>
+									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"><fmt:parseNumber var= "max" integerOnly= "true" value= "${chart_data.now_data.max}"/>${max}대</h3>
 									<p class="tx-11 tx-color-03 mg-b-0">
-										<span class="tx-medium tx-danger">0.7%</span> than last week
+										<span class="tx-medium ${chart_data.rate_data.max < 0 ? 'tx-success' : 'tx-danger'}">
+										<fmt:formatNumber value="${chart_data.rate_data.max}" pattern=".0"/>% ${chart_data.rate_data.max < 0 ? 'decrease' : 'increase'}
+										</span> than last week
 									</p>
 								</div>
 							</div>
@@ -108,12 +110,13 @@
 						<div class="col-sm-6 col-lg-3 mg-t-10 mg-lg-t-0">
 							<div class="card card-body">
 								<h6
-									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Avg.
-									Order Value</h6>
+									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">평균 DTC 발생량</h6>
 								<div class="d-flex d-lg-block d-xl-flex align-items-end">
-									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">$306.20</h3>
+									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">${chart_data.now_data.avg }대</h3>
 									<p class="tx-11 tx-color-03 mg-b-0">
-										<span class="tx-medium tx-danger">0.3%</span> than last week
+										<span class="tx-medium ${chart_data.rate_data.avg < 0 ? 'tx-success' : 'tx-danger'}">
+										<fmt:formatNumber value="${chart_data.rate_data.avg}" pattern=".0"/>% ${chart_data.rate_data.avg < 0 ? 'decrease' : 'increase'}
+										</span> than last week
 									</p>
 								</div>
 							</div>
@@ -122,12 +125,13 @@
 						<div class="col-sm-6 col-lg-3 mg-t-10 mg-lg-t-0">
 							<div class="card card-body">
 								<h6
-									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Order
-									Quantity</h6>
+									class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">주간 DTC 합계량</h6>
 								<div class="d-flex d-lg-block d-xl-flex align-items-end">
-									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">1,650</h3>
+									<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"><fmt:parseNumber var= "sum" integerOnly= "true" value= "${chart_data.now_data.sum}"/>${sum}대</h3>
 									<p class="tx-11 tx-color-03 mg-b-0">
-										<span class="tx-medium tx-success">2.1%</span> than last week
+										<span class="tx-medium ${chart_data.rate_data.sum < 0 ? 'tx-success' : 'tx-danger'}">
+										<fmt:formatNumber value="${chart_data.rate_data.sum}" pattern=".0"/>% ${chart_data.rate_data.sum < 0 ? 'decrease' : 'increase'}
+										</span> than last week
 									</p>
 								</div>
 							</div>

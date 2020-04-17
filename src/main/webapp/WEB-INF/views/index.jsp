@@ -122,7 +122,8 @@
 								<li onclick="location.href='/brokenSVC'" title="차량 고장 관리 서비스 이동">
 									<div class="clear_li">
 										<header
-											style="background-image: url(&quot;https://static.wanted.co.kr/images/company/1776/tvgy1xnkxve6kfkw__400_400.jpg&quot;);">
+											style="background-image: url(&quot;/resources/aiaas/kr/images/logo_dtc_m_svc.png&quot;);">
+										<div class="icon_beta">Beta</div>
 										</header>
 										<div class="body">
 											<dl>
