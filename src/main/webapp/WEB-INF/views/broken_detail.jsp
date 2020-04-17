@@ -38,7 +38,7 @@
 						</div>
 
 						<div class="d-none d-md-block">
-							<button class="btn btn-sm pd-x-15 btn-white btn-uppercase">
+							<button class="btn btn-sm pd-x-15 btn-primary btn-uppercase">
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 									viewBox="0 0 24 24" fill="none" stroke="currentColor"
 									stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -46,7 +46,7 @@
 									<path
 										d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
 									<polyline points="22,6 12,13 2,6"></polyline></svg>
-								Email
+								차트보기
 							</button>
 
 							<button class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5">
@@ -58,19 +58,7 @@
 									<path
 										d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
 									<rect x="6" y="14" width="12" height="8"></rect></svg>
-								Print
-							</button>
-
-							<button
-								class="btn btn-sm pd-x-15 btn-primary btn-uppercase mg-l-5">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-									viewBox="0 0 24 24" fill="none" stroke="currentColor"
-									stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-									class="feather feather-file wd-10 mg-r-5">
-									<path
-										d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-									<polyline points="13 2 13 9 20 9"></polyline></svg>
-								Generate Report
+								차량 이미지 보기
 							</button>
 						</div>
 
@@ -159,6 +147,71 @@
 								<div class="card-body pos-relative pd-0">
 									<div class="pos-absolute t-20 l-20 wd-xl-100p z-index-10">
 										<div id="row_container" class="row">
+											<div class="table_box">
+												<div class="total_div">
+												<fmt:parseNumber var= "listCnt" integerOnly= "true" value= "${pagination.listCnt}"/>
+													<span class="total"><em><c:out value = "${listCnt}"/></em>개 차량</span>
+													<div class="form-group select_num">
+														<select class="form-control" id="sel1">
+															<option <c:out value="${pagination.listSize == '10' ? 'selected' : ''}"/>>10개씩</option>
+															<option <c:out value="${pagination.listSize == '25' ? 'selected' : ''}"/>>25개씩</option>
+															<option <c:out value="${pagination.listSize == '50' ? 'selected' : ''}"/>>50개씩</option>
+															<option <c:out value="${pagination.listSize == '100' ? 'selected' : ''}"/>>100개씩</option>
+														</select>
+													</div>
+												</div>
+												<table id="rmc_table"
+													class="table table-striped table-bordered"
+													style="width: 100%">
+													<thead>
+														<tr>
+															<th>time</th>
+															<th>car_id</th>
+															<th>DTC</th>
+															<th>FMI</th>
+															<th>SPN</th>
+														</tr>
+													</thead>
+													<tbody>
+														<c:forEach var="rmc" items="${rmc_list}">
+															<tr id = "${rmc.car_id}">
+																<td>${rmc.time }</td>
+																<td>${rmc.car_id }</td>
+																<td>${rmc.DTC }</td>
+																<td>${rmc.FMI_NAME }</td>
+																<td>${rmc.SPN }</td>
+															</tr>
+														</c:forEach>
+													</tbody>
+												</table>
+
+												<div class="paginationBox">
+													<ul class="pagination">
+														<c:if test="${pagination.prev}">
+															<li class="page-item ">
+																<a class="page-link" href="#" onClick="fn_prev('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}', '${pagination.listSize}')">이전</a>
+															</li>
+														</c:if>
+
+														<c:forEach begin="${pagination.startPage}" end="${pagination.endPage}" var="idx">
+															<li	class="page-item <c:out value="${pagination.page == idx ? 'active' : ''}"/> ">
+																<a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination.range}', '${pagination.rangeSize}' ,'${pagination.listSize}')">${idx}</a>
+															</li>
+
+														</c:forEach>
+
+														<c:if test="${pagination.next}">
+															<li class="next-item">
+																<a class="page-link" href="#" onClick="fn_next('${pagination.range}', '${pagination.range}', '${pagination.rangeSize}', '${pagination.listSize}')">다음</a>
+															</li>
+														</c:if>
+
+													</ul>
+
+												</div>
+											</div>
+											<!-- pagination{e} -->
+
 											
 										</div>
 										<!-- row -->

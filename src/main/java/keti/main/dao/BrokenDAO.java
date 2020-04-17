@@ -31,6 +31,11 @@ public class BrokenDAO {
 		return sqlSession.selectOne(Namespace+".getCount");
 	}
 	
+	public int getDetailCount(String id) {
+		//Detail RMC 가져오기
+		return sqlSession.selectOne(Namespace+".getDetailCount", id);
+	}
+	
 	public List<Broken_RMC> getRMC(int listSize, int offset) {
 		Map<String, Integer> param = new HashMap<>();
 		param.put("listSize", listSize);
@@ -55,10 +60,20 @@ public class BrokenDAO {
 	}
 	
 	public List<Broken_Chart> getProcess_Chart() {
+		List<Broken_Chart> list = sqlSession.selectList(Namespace+".getChart");
 		return sqlSession.selectList(Namespace+".getChart");
 	}
 
 	public List<Broken_Chart> getProcess_LastChart() {
 		return sqlSession.selectList(Namespace+".getLastChart");
 	}
+
+	public List<Broken_RMC> getDetailRMC(String id, int listSize, int offset) {
+		Map<String, Object> param = new HashMap<>();
+		param.put("car_id", id);
+		param.put("listSize", listSize);
+		param.put("offset", offset);
+		return sqlSession.selectList(Namespace+".selectDetailRMC", param);
+	}
+	
 }

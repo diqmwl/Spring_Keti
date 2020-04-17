@@ -25,9 +25,17 @@ public class BrokenService {
 		return brokenDAO.getCount();		
 	}
 
+	public int getDetailCount(String id) {
+		return brokenDAO.getDetailCount(id);
+	}
+	
 	public List<Object> getChart() {
 		// TODO Auto-generated method stub
 		return brokenDAO.getChart();
+	}
+	
+	public List<Broken_RMC> getDetailRMC(String id, int listSize, int offset) {
+		return brokenDAO.getDetailRMC(id, listSize, offset);
 	}
 	
 	public HashMap<String, HashMap<String, Float>> getAllProcess_Chart() {
@@ -41,6 +49,7 @@ public class BrokenService {
 	}
 	
 	
+/////////함수들	
 	public HashMap<String, Float> rate(HashMap<String, Float> now, HashMap<String, Float> last){
 		HashMap<String, Float> hashMap = new HashMap<String, Float>();
 		float max_rate = (now.get("max") - last.get("max")) / last.get("max") * 100;
@@ -66,35 +75,29 @@ public class BrokenService {
 		return hashMap;
 	}
 	
-	public void max_value(List<Broken_Chart> temp, HashMap<String, Float> hash) {
+	private void max_value(List<Broken_Chart> temp, HashMap<String, Float> hash) {
 		float max = 0;
 		
 		for(int i = 0; i < temp.size(); i++) {
-			if(i != 0) {
 				max = Math.max(max, temp.get(i).getCount());
-			}
 		}
 		hash.put("max", max);		
 	}
 	
-	public void min_value(List<Broken_Chart> temp, HashMap<String, Float> hash) {
+	private void min_value(List<Broken_Chart> temp, HashMap<String, Float> hash) {
 		float min = 9999;
 		
 		for(int i = 0; i < temp.size(); i++) {
-			if(i != 0) {
 				min = Math.min(min, temp.get(i).getCount());
-			}
 		}
 		hash.put("min", min);		
 	}
 	
-	public void avg_sum(List<Broken_Chart> temp, int flag, HashMap<String, Float> hash) {
+	private void avg_sum(List<Broken_Chart> temp, int flag, HashMap<String, Float> hash) {
 		float avg = 0;
 		
 		for(int i = 0; i < temp.size(); i++) {
-			if(i != 0) {
 				avg += temp.get(i).getCount();
-			}
 		}
 		
 		if(flag == 1) hash.put("avg", avg/ (temp.size()-1));

@@ -9,20 +9,34 @@
 		select count(*) FROM MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.FMI = fmi.code AND rmc.SPN = spn.code
 	</select>
 
+	<select id="getDetailCount" resultType="int" parameterType="String">
+		select count(*) FROM MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.FMI = fmi.code AND rmc.SPN = spn.code AND car_id = ${car_id}
+	</select>
+
 	<select id="selectRMC" parameterType="hashmap" resultType="rmc" fetchSize="1000">
 		select rmc.time, rmc.car_id, rmc.FMI, fmi.name_kr as FMI_NAME, rmc.SPN,
 		spn.description_kr as SPN_DESCRIPTION, rmc.DTC, rmc.CM,
 		rmc.DRIVE_SPEED, rmc.OC, rmc.RPM, rmc.GPS_LAT, rmc.GPS_LONG from
 		MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.SPN =
-		spn.code AND rmc.FMI = fmi.code order by time desc limit #{listSize} offset #{offset}
+		spn.code AND rmc.FMI = fmi.code group by car_id order by time desc limit #{listSize} offset #{offset}
 	</select>
 
 	<select id="getChart" resultType="chart" fetchSize="1000">
-		select date_format(time, '%Y%m%d') as date, count(*) as count from MAIN_RMC group by date_format(time, '%Y%m%d') order by date desc limit 7
+		select date_format(time, '%Y%m%d') as date, count(*) as count from MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.SPN =
+		spn.code AND rmc.FMI = fmi.code group by date_format(time, '%Y%m%d') order by date desc limit 7
 	</select>
 	
 	<select id="getLastChart" resultType="chart" fetchSize="1000">
-		select date_format(time, '%Y%m%d') as date, count(*) as count from MAIN_RMC group by date_format(time, '%Y%m%d') order by date desc limit 7 offset 7
+		select date_format(time, '%Y%m%d') as date, count(*) as count from MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.SPN =
+		spn.code AND rmc.FMI = fmi.code group by date_format(time, '%Y%m%d') order by date desc limit 7 offset 7
+	</select>
+	
+	<select id="selectDetailRMC" parameterType="hashmap" resultType="rmc" fetchSize="1000">
+		select rmc.time, rmc.car_id, rmc.FMI, fmi.name_kr as FMI_NAME, rmc.SPN,
+		spn.description_kr as SPN_DESCRIPTION, rmc.DTC, rmc.CM,
+		rmc.DRIVE_SPEED, rmc.OC, rmc.RPM, rmc.GPS_LAT, rmc.GPS_LONG from
+		MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.SPN =
+		spn.code AND rmc.FMI = fmi.code AND rmc.car_id = #{car_id} order by time desc limit #{listSize} offset #{offset}
 	</select>
 	
 </mapper>
