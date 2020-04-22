@@ -12,7 +12,8 @@
 
 <script	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/broken.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/brokencommon.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/brokendetail.js"></script>
 <body>
 
 	<div class="page-profile">
@@ -34,7 +35,7 @@
 										모니터링 서비스</li>
 								</ol>
 							</nav>
-							<h4 class="mg-b-0 tx-spacing--1">차량 고장 모니터링 대시보드</h4>
+							<h4 class="mg-b-0 tx-spacing--1"><a style="text-decoration: none; color: black;" href="/brokenSVC">차량 고장 모니터링 대시보드</a></h4>
 						</div>
 
 						<div class="d-none d-md-block">
@@ -150,7 +151,7 @@
 											<div class="table_box">
 												<div class="total_div">
 												<fmt:parseNumber var= "listCnt" integerOnly= "true" value= "${pagination.listCnt}"/>
-													<span class="total"><em><c:out value = "${listCnt}"/></em>개 차량</span>
+													<span class="total"><em>차량번호 : <c:out value = "${rmc_list[0].car_id}"/></em></span>
 													<div class="form-group select_num">
 														<select class="form-control" id="sel1">
 															<option <c:out value="${pagination.listSize == '10' ? 'selected' : ''}"/>>10개씩</option>
@@ -167,19 +168,37 @@
 														<tr>
 															<th>time</th>
 															<th>car_id</th>
-															<th>DTC</th>
 															<th>FMI</th>
+															<th>FMI_NAME</th>
 															<th>SPN</th>
+															<th>SPN_DESCRIPTION</th>
+															<th>STATUS</th>
 														</tr>
 													</thead>
 													<tbody>
 														<c:forEach var="rmc" items="${rmc_list}">
-															<tr id = "${rmc.car_id}">
-																<td>${rmc.time }</td>
-																<td>${rmc.car_id }</td>
-																<td>${rmc.DTC }</td>
-																<td>${rmc.FMI_NAME }</td>
-																<td>${rmc.SPN }</td>
+															<tr class = "${rmc.car_id}" data-toggle="modal" data-target="#exampleModalCenter">
+																<td class="time">${rmc.time }</td>
+																<td class="car_id">${rmc.car_id }</td>
+																<td class="fmi">${rmc.FMI }</td>
+																<td class="fmi_name">${rmc.FMI_NAME }</td>
+																<td class="spn">${rmc.SPN }</td>
+																<td class="spn_description">${rmc.SPN_DESCRIPTION }</td>
+																<c:set var="status" value="${rmc.status}" />
+																<c:choose>
+																	<c:when test="${status eq '0'}">																
+																		<td class="status">고장 발생</td>
+																	</c:when>
+																	<c:when test="${status eq '1'}">
+																		<td class="status">접수 대기중</td>
+																	</c:when>
+																	<c:when test="${status eq '2'}">
+																		<td class="status">접수 완료</td>
+																	</c:when>
+																	<c:otherwise>
+																		<td class="status">수리 완료</td>
+																	</c:otherwise>
+																</c:choose>
 															</tr>
 														</c:forEach>
 													</tbody>
@@ -212,7 +231,66 @@
 											</div>
 											<!-- pagination{e} -->
 
-											
+										<!-- Modal -->
+											<div class="modal fade" id="exampleModalCenter" tabindex="-1"
+												role="dialog" aria-labelledby="exampleModalCenterTitle"
+												aria-hidden="true">
+												<div class="modal-dialog modal-dialog-centered"
+													role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLongTitle">상태 선택</h5>
+															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+																	<a class="btn standard-btn" value="0">상태 초기화</a>
+																	<a class="btn standard-btn mg-t-10" value="1">사용자에게 수리 알림</a>
+																	<a class="btn standard-btn mg-t-10" value="2">수리 완료</a>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<!-- Modal2 -->
+											<div class="modal fade" id="exampleModalCenter2" tabindex="-1"
+												role="dialog" aria-labelledby="exampleModalCenterTitle"
+												aria-hidden="true">
+												<div class="modal-dialog modal-dialog-centered"
+													role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLongTitle">차량 수리 알림 신청</h5>
+															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<ul class="list-group">
+																<li class="list-group-item list-time">Time : <span>time</span></li>
+																<li class="list-group-item list-carid">Car_ID : <span>car_id</span></li>
+																<li class="list-group-item list-fmi">FMI_CODE : <span>fmi_code</span></li>
+																<li class="list-group-item list-spn">SPN_CODE : <span>spn_code</span></li>
+															</ul>
+															<br>
+															<div class="form-group">
+																<label for="exampleFormControlTextarea1">간단한 메세지를 남겨주세요. (최대 200자)</label>
+																<textarea class="form-control modal_textarea" id="modal_text" rows="3"></textarea>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-primary">메세지 보내기</button>
+															<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+														</div>
+													</div>
+												</div>
+											</div>
+
+
 										</div>
 										<!-- row -->
 									</div>

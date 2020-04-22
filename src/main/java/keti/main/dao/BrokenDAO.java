@@ -1,14 +1,11 @@
 package keti.main.dao;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
-import org.influxdb.InfluxDB;
-import org.influxdb.InfluxDBFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -17,13 +14,12 @@ import keti.main.model.Broken_RMC;
 
 @Repository
 public class BrokenDAO {
-	InfluxDB influxDB;
 	
 	@Autowired private SqlSession sqlSession;
 	private static final String Namespace = "keti.main.mapper.rmcMapper";
 	
 	public BrokenDAO() {
-		influxDB = InfluxDBFactory.connect("http://125.140.110.217:8999" , "tinyos", "tinyos");
+	
 	}
 	
 	public int getCount() {
@@ -75,5 +71,69 @@ public class BrokenDAO {
 		param.put("offset", offset);
 		return sqlSession.selectList(Namespace+".selectDetailRMC", param);
 	}
+
+	public String insertRMC(String time, String car_id, String comments) {
+		Map<String, Object> param = new HashMap<>();
+		param.put("time", time);
+		param.put("car_id", car_id);
+		param.put("comments", comments);
+		String result = "";
+		int check = 0;
+		
+		if(sqlSession.selectList(Namespace+".selectAlter", param).size() == 0) {
+			try {
+				param.put("status", 1);
+				check = sqlSession.insert(Namespace+".insertAlter", param);
+				if(check == 1) {
+					result = "success";
+				}
+			} catch (Exception e) {
+				result = "이미 대기중이거나 수리중인 차량입니다.";
+			}
+		}else {
+			result = "이미 대기중이거나 수리중인 차량입니다.";
+		}
+		return result;
+	}
 	
+	public String deleteRMC(String time, String car_id) {
+		Map<String, Object> param = new HashMap<>();
+		param.put("time", time);
+		param.put("car_id", car_id);
+		String result = "";
+		int check = 0;
+		
+		try {
+			check = sqlSession.insert(Namespace+".deleteAlter", param);
+			if(check == 0)
+				result = "이미 초기화되어 있습니다.";
+			else 
+				result = "success";
+		} catch (Exception e) {
+			result = "에러발생";
+		}
+		
+		return result;
+	}
+	
+	public String completeRMC(String time, String car_id) {
+		Map<String, Object> param = new HashMap<>();
+		param.put("time", time);
+		param.put("car_id", car_id);
+		String result = "";
+		int check = 0;
+		
+		try {
+			param.put("status", 3);
+			check = sqlSession.insert(Namespace+".completeAlter", param);
+			if(check == 1)
+				result = "success";
+			else 
+				result = "완료처리 할 수 없습니다";
+		} catch (Exception e) {
+			result = "에러발생";
+		}
+		
+		return result;	
+		}
 }

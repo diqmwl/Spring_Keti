@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -42,6 +44,37 @@ public class BrokenController {
 	@RequestMapping(value = "getChart")
 	public List<Object> getChart(Model model) {
 		return brokenService.getChart();
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "insertRMC", method = RequestMethod.POST, produces = "application/text; charset=utf8")
+	public String insertRMC(Model model,
+			@RequestParam(value = "time")String time,
+			@RequestParam(value = "car_id")String car_id,
+			@RequestParam(value = "comments")String comments
+			) {
+		
+		return brokenService.insertRMC(time, car_id, comments);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "deleteRMC", method = RequestMethod.POST, produces = "application/text; charset=utf8")
+	public String deleteRMC(Model model,
+			@RequestParam(value = "time")String time,
+			@RequestParam(value = "car_id")String car_id
+			) {
+		
+		return brokenService.deleteRMC(time, car_id);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "completeRMC", method = RequestMethod.POST, produces = "application/text; charset=utf8")
+	public String completeRMC(Model model,
+			@RequestParam(value = "time")String time,
+			@RequestParam(value = "car_id")String car_id
+			) {
+		
+		return brokenService.completeRMC(time, car_id);
 	}
 	
 }

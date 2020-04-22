@@ -12,6 +12,7 @@
 
 <script	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/brokencommon.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/broken.js"></script>
 <body>
 
@@ -34,7 +35,7 @@
 										모니터링 서비스</li>
 								</ol>
 							</nav>
-							<h4 class="mg-b-0 tx-spacing--1">차량 고장 모니터링 대시보드</h4>
+							<h4 class="mg-b-0 tx-spacing--1"><a style="text-decoration: none; color: black;" href="/brokenSVC">차량 고장 모니터링 대시보드</a></h4>
 						</div>
 
 						<div class="d-none d-md-block">

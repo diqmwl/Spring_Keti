@@ -5,7 +5,9 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="keti.main.model.Broken_RMC" alias="rmc" />
-		<typeAlias type="keti.main.model.Broken_Chart" alias="chart" />	
+		<typeAlias type="keti.main.model.Broken_Chart" alias="chart" />
+		<typeAlias type="keti.main.model.Broken_Alter" alias="alter" />	
+		
 	</typeAliases>
 
 </configuration>

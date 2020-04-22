@@ -48,7 +48,17 @@ public class BrokenService {
 		return process_data;
 	}
 	
+	public String insertRMC(String time, String car_id, String comments) {
+		return brokenDAO.insertRMC(time, car_id, comments);
+	}
 	
+	public String deleteRMC(String time, String car_id) {
+		return brokenDAO.deleteRMC(time, car_id);
+	}
+
+	public String completeRMC(String time, String car_id) {
+		return brokenDAO.completeRMC(time, car_id);
+	}
 /////////함수들	
 	public HashMap<String, Float> rate(HashMap<String, Float> now, HashMap<String, Float> last){
 		HashMap<String, Float> hashMap = new HashMap<String, Float>();
