@@ -7,12 +7,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import keti.main.common.Pagination;
+import keti.main.model.Broken_Alter;
+import keti.main.model.Broken_RMC;
 import keti.main.service.BrokenService;
 
 /**
@@ -47,7 +50,7 @@ public class BrokenController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "insertRMC", method = RequestMethod.POST, produces = "application/text; charset=utf8")
+	@RequestMapping(value = "RMC", method = RequestMethod.POST, produces = "application/text; charset=utf8")
 	public String insertRMC(Model model,
 			@RequestParam(value = "time")String time,
 			@RequestParam(value = "car_id")String car_id,
@@ -58,7 +61,7 @@ public class BrokenController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "deleteRMC", method = RequestMethod.POST, produces = "application/text; charset=utf8")
+	@RequestMapping(value = "RMC", method = RequestMethod.DELETE, produces = "application/text; charset=utf8")
 	public String deleteRMC(Model model,
 			@RequestParam(value = "time")String time,
 			@RequestParam(value = "car_id")String car_id
@@ -68,13 +71,12 @@ public class BrokenController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "completeRMC", method = RequestMethod.POST, produces = "application/text; charset=utf8")
+	@RequestMapping(value = "RMC", method = RequestMethod.PUT, produces = "application/text; charset=utf8")
 	public String completeRMC(Model model,
-			@RequestParam(value = "time")String time,
-			@RequestParam(value = "car_id")String car_id
+			@RequestBody Broken_Alter broken_Alter
 			) {
 		
-		return brokenService.completeRMC(time, car_id);
+		return brokenService.completeRMC(broken_Alter.getTime(), broken_Alter.getCar_id());
 	}
 	
 }

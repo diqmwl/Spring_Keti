@@ -214,11 +214,10 @@
 
 														<c:forEach begin="${pagination.startPage}" end="${pagination.endPage}" var="idx">
 															<li	class="page-item <c:out value="${pagination.page == idx ? 'active' : ''}"/> ">
-																<a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination.range}', '${pagination.rangeSize}' ,'${pagination.listSize}')">${idx}</a>
+																<a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination.range}', '${pagination.rangeSize}' ,'${pagination.listSize}')">${idx}</a>															
 															</li>
 
 														</c:forEach>
-
 														<c:if test="${pagination.next}">
 															<li class="next-item">
 																<a class="page-link" href="#" onClick="fn_next('${pagination.range}', '${pagination.range}', '${pagination.rangeSize}', '${pagination.listSize}')">다음</a>

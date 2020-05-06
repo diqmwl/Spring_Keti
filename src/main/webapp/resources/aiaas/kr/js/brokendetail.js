@@ -47,7 +47,7 @@ $(document).ready(function() {
 	    
 		 $.ajax({
 			 method:"POST",
-             url: '/brokenSVC/insertRMC',
+             url: '/brokenSVC/RMC',
              data: {
             	 time: time,
             	 car_id: car_id,
@@ -80,12 +80,12 @@ $(document).ready(function() {
 
 	function complete_Alter() {
 	$.ajax({
-		method : "POST",
-		url : '/brokenSVC/completeRMC',
-		data : {
-			time : time,
-			car_id : car_id
-		},
+		method : "PUT",
+		url : '/brokenSVC/RMC',
+		data : JSON.stringify({
+			"time" : time, "car_id" : car_id
+		}),
+		contentType: "application/json; charset=utf-8",
 		beforeSend : function(xhr) {
 			xhr.setRequestHeader(header, token);
 		},
@@ -106,12 +106,11 @@ $(document).ready(function() {
 
 	function delete_Alter() {
 		$.ajax({
-			method : "POST",
-			url : '/brokenSVC/deleteRMC',
-			data : {
+			method : "DELETE",
+			url : '/brokenSVC/RMC?'+ $.param({
 				time : time,
 				car_id : car_id
-			},
+		    }),
 			beforeSend : function(xhr) {
 				xhr.setRequestHeader(header, token);
 			},

@@ -28,5 +28,8 @@ function fn_next(page, range, rangeSize, listSize) {
 }
 
 function trans_url(page, range, listSize){
-	return "/brokenSVC?page="+ page + "&range=" + range + "&listSize=" + listSize + "#row_container";
+	var url = location.pathname+"?";
+	if(location.pathname.split("/").length > 2)
+		url += location.search.split("&")[0].replace("?","")
+	return url+"&page="+ page + "&range=" + range + "&listSize=" + listSize + "#row_container";
 }

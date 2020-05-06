@@ -133,7 +133,21 @@
 											</dl>
 										</div>
 									</div>
-								</li>								
+								</li>
+								<li onclick="location.href='/bceSVC'" title="BCE 서비스 이동">
+									<div class="clear_li">
+										<header
+											style="background-image: url(&quot;https://static.wanted.co.kr/images/company/1776/tvgy1xnkxve6kfkw__400_400.jpg&quot;);">
+										</header>
+										<div class="body">
+											<dl>
+												<dt>BCE 서비스</dt>
+												<span>Battery, Cooling water, Engine oil 서비스</span>
+												<dd>기업 차량의 배터리, 냉각수, 엔진오일의 정보를 제공합니다.</dd>
+											</dl>
+										</div>
+									</div>
+								</li>
 								<li onclick="location.href='/habitSVC'" title="운전자 습관 분석 서비스 이동">
 									<div class="clear_li">
 										<header
@@ -147,20 +161,7 @@
 											</dl>
 										</div>
 									</div>
-								</li>								<li>
-									<div class="clear_li">
-										<header
-											style="background-image: url(&quot;https://static.wanted.co.kr/images/company/1776/tvgy1xnkxve6kfkw__400_400.jpg&quot;);">
-										</header>
-										<div class="body">
-											<dl>
-												<dt>서비스 미정</dt>
-												<span>Vehicle Monitoring Service</span>
-												<dd>기업 차량의 운행 통계 및 실시간 관리 정보를 제공해줍니다.</dd>
-											</dl>
-										</div>
-									</div>
-								</li>								<li>
+								<li>
 									<div class="clear_li">
 										<header
 											style="background-image: url(&quot;https://static.wanted.co.kr/images/company/1776/tvgy1xnkxve6kfkw__400_400.jpg&quot;);">
