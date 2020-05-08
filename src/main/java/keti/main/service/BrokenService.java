@@ -34,6 +34,10 @@ public class BrokenService {
 		return brokenDAO.getChart();
 	}
 	
+	public List<Object> getCar(String data) {
+		return brokenDAO.getCar(data);
+	}
+	
 	public List<Broken_RMC> getDetailRMC(String id, int listSize, int offset) {
 		return brokenDAO.getDetailRMC(id, listSize, offset);
 	}

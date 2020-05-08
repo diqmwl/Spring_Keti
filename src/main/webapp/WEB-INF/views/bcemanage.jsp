@@ -11,6 +11,7 @@
 </head>
 
 <script	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/bce.js"></script>
 <body>
 
 	<div class="page-profile">
@@ -136,14 +137,20 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12">
-							<div class="card card-stats mg-t-0">
-								<div class="card-header  cd-white">
-									<h5 class="card-title">sqs</h5>
-								</div>
-								<div class="card-footer">
-									<div class="stats">
-										<i class="material-icons">date_range</i> Last 24 Hours
-									</div>
+							<div class="card card-stats mg-t-0 pd-15">
+							<button class="add">add</button>
+								<ul class="nav nav-tabs" id="myTab" role="tablist">
+									<li class="nav-item"><a class="nav-link active" id="tab1"
+										data-toggle="tab" href="#div_tab1" role="tab"
+										aria-controls="tab1" aria-selected="true">tab1
+											<button type="button" class="close" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+									</a></li>
+								</ul>
+								<div class="tab-content" id="myTabContent">
+									  <div class="tab-pane fade show active" id="div_tab1" role="tabpanel" aria-labelledby="tab1">1.</div>
+
 								</div>
 							</div>
 						</div>

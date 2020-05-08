@@ -343,6 +343,13 @@ body {
     padding-right: 0px !important;
 }
 
+.car-text{
+	display: none;	
+}
+
+.car-text.show{
+	display: block;
+}
 
 
 

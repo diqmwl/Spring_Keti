@@ -11,7 +11,6 @@
 
 
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/aiaas/kr/css/table.css">
 
 <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
@@ -110,7 +109,7 @@ $(document).ready( function () {
 									<div class="d-flex d-lg-block d-xl-flex align-items-end">
 										<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">0.81%</h3>
 										<p class="tx-11 tx-color-03 mg-b-0">
-											<span class="tx-medium tx-success">1.2% <i class="icon ion-md-arrow-up"></i></span> than last week
+											<span class="tx-medium tx-success">1.2%</span> than last week
 										</p>
 									</div>
 									<div class="chart-three">
@@ -128,7 +127,25 @@ $(document).ready( function () {
 									<div class="d-flex d-lg-block d-xl-flex align-items-end">
 										<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">0.81%</h3>
 										<p class="tx-11 tx-color-03 mg-b-0">
-											<span class="tx-medium tx-success">1.2% <i class="icon ion-md-arrow-up"></i></span> than last week
+											<span class="tx-medium tx-success">1.2%</span> than last week
+										</p>
+									</div>
+									<div class="chart-three">
+										<div id="flotChart3" class="flot-chart ht-30" style="padding: 0px; position: relative;">
+											<canvas class="flot-base" width="328" height="30" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 328px; height: 30px;"></canvas>
+											<canvas class="flot-overlay" width="328" height="30" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 328px; height: 30px;"></canvas>
+										</div>
+									</div>
+									<!-- chart-three -->
+								</div>
+							</div>
+							<div class="col-sm-6 mg-t-10 col-lg-3">
+								<div class="card card-body">
+									<h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Conversion Rate</h6>
+									<div class="d-flex d-lg-block d-xl-flex align-items-end">
+										<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">0.81%</h3>
+										<p class="tx-11 tx-color-03 mg-b-0">y
+											<span class="tx-medium tx-success">1.2%</span> than last week
 										</p>
 									</div>
 									<div class="chart-three">
@@ -146,25 +163,7 @@ $(document).ready( function () {
 									<div class="d-flex d-lg-block d-xl-flex align-items-end">
 										<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">0.81%</h3>
 										<p class="tx-11 tx-color-03 mg-b-0">
-											<span class="tx-medium tx-success">1.2% <i class="icon ion-md-arrow-up"></i></span> than last week
-										</p>
-									</div>
-									<div class="chart-three">
-										<div id="flotChart3" class="flot-chart ht-30" style="padding: 0px; position: relative;">
-											<canvas class="flot-base" width="328" height="30" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 328px; height: 30px;"></canvas>
-											<canvas class="flot-overlay" width="328" height="30" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 328px; height: 30px;"></canvas>
-										</div>
-									</div>
-									<!-- chart-three -->
-								</div>
-							</div>
-							<div class="col-sm-6 mg-t-10 col-lg-3">
-								<div class="card card-body">
-									<h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Conversion Rate</h6>
-									<div class="d-flex d-lg-block d-xl-flex align-items-end">
-										<h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">0.81%</h3>
-										<p class="tx-11 tx-color-03 mg-b-0">
-											<span class="tx-medium tx-success">1.2% <i class="icon ion-md-arrow-up"></i></span> than last week
+											<span class="tx-medium tx-success">1.2%</span> than last week
 										</p>
 									</div>
 									<div class="chart-three">

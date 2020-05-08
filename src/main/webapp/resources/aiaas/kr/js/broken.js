@@ -1,4 +1,5 @@
 var select_value = 25;
+var car_list = new Object();
 
 //페이지 개수 선택
 $(document).ready(function() {
@@ -26,7 +27,35 @@ $(document).ready(function() {
 	return result
 	}
 
+	function get_carlist(data){
+		if(car_list[data]) update_text(data)
+		else{
+			$.ajax({
+		        method:"GET",
+		        url:"/brokenSVC/getCar",
+		        traditional : true,
+		        data : {
+		        	car_list: data
+		        },
+		        success:function(response){
+		        	car_list[data] = response
+		        	update_text(data)
+		        }
+		    });
+		}
+	}
 
+	function update_text(date){
+		var text = date.substring(0,4)+"년 " + date.substring(4,6) + "월 " + date.substring(6,8)+ "일 DTC 차량 리스트 :";
+		console.log(car_list[date].length)
+		for(var i in car_list[date]){
+			text += " "
+			text += car_list[date][i].car_id
+		}
+		
+		$(".card-footer").text(text)
+	}
+	
     function drawChart() {
 	  var chart_data = get_data();
 	  console.log(chart_data)
@@ -61,8 +90,16 @@ $(document).ready(function() {
 
       chart.draw(data, google.charts.Bar.convertOptions(options))
     
-      
-      
+      google.visualization.events.addListener(chart, 'select', function () {
+  		var div = $(".car-text")
+		if(div.hasClass("show") === true) div.removeClass("show");
+		else div.addClass("show")
+		
+    	    var selectedItem = chart.getSelection()[0];
+    	    if(!selectedItem) return
+    	    var selectedColumn = data.getValue(selectedItem.row,0);
+    	    get_carlist(selectedColumn)
+      });      
       
       //create trigger to resizeEnd event     
       $(window).resize(function() {

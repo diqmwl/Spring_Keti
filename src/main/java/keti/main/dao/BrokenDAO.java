@@ -38,6 +38,10 @@ public class BrokenDAO {
 		param.put("offset", offset);
 		return sqlSession.selectList(Namespace+".selectRMC", param);
 	}
+	
+	public List<Object> getCar(String data) {
+		return sqlSession.selectList(Namespace+".getCar", data);
+	}
 
 	public List<Object> getChart() {
 		List<Object> listdata = new ArrayList<Object>();

@@ -39,11 +39,6 @@ public class IndexController {
 		return "brokenmanage";
 	}
 	
-	@GetMapping(value = "/habitSVC")
-	public String habitSVC() {	
-		return "habit";
-	}
-	
 	@GetMapping(value="/manage")
 	public String manageSVC() {
 		return "management";

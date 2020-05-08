@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import keti.main.common.Pagination;
 import keti.main.model.Broken_Alter;
-import keti.main.model.Broken_RMC;
 import keti.main.service.BrokenService;
 
 /**
@@ -47,6 +45,12 @@ public class BrokenController {
 	@RequestMapping(value = "getChart")
 	public List<Object> getChart(Model model) {
 		return brokenService.getChart();
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "getCar")
+	public List<Object> getCar(Model model, @RequestParam(value = "car_list")String data) {
+		return brokenService.getCar(data);
 	}
 	
 	@ResponseBody

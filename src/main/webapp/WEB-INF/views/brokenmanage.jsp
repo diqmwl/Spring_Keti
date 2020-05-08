@@ -151,6 +151,8 @@
 									</div>
 								</div>
 								<!-- card-body -->
+								<div class="card-footer car-text">
+								</div>
 							</div>
 							<!-- card -->
 						</div>

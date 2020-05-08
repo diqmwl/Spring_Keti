@@ -26,6 +26,11 @@
 		spn.code AND rmc.FMI = fmi.code group by date_format(time, '%Y%m%d') order by date desc limit 7
 	</select>
 	
+	<select id="getCar" resultType="hashmap" fetchSize="1000" parameterType="String">
+		select rmc.car_id from MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.SPN =
+		spn.code AND rmc.FMI = fmi.code AND date_format(rmc.time, '%Y%m%d') = ${data} group by car_id order by time desc
+	</select>
+	
 	<select id="getLastChart" resultType="chart" fetchSize="1000">
 		select date_format(time, '%Y%m%d') as date, count(*) as count from MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.SPN =
 		spn.code AND rmc.FMI = fmi.code group by date_format(time, '%Y%m%d') order by date desc limit 7 offset 7
