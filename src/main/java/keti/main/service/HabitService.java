@@ -13,9 +13,14 @@ public class HabitService {
 	@Autowired
 	private HabitDAO habitDAO;
 	
-	public List<Habit_Rank> getRank() {
+	public List<Habit_Rank> getRank(int listSize, int offset) {
 		// TODO Auto-generated method stub
-		return habitDAO.getRank();
+		return habitDAO.getRank(listSize, offset);
+	}
+
+	public double getCount() {
+		// TODO Auto-generated method stub
+		return habitDAO.getCount();
 	}
 	
 }

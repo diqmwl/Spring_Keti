@@ -56,6 +56,6 @@ public class Habit_Rank implements Comparable<Habit_Rank> {
 	@Override
 	public int compareTo(Habit_Rank habit_Rank) {
 		// TODO Auto-generated method stub
-		return Integer.parseInt(this.rank)-Integer.parseInt(habit_Rank.rank);
+		return Integer.parseInt(habit_Rank.rank)-Integer.parseInt(this.rank);
 	}
 }

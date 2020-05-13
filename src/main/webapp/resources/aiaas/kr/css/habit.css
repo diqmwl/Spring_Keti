@@ -1,3 +1,6 @@
+p{
+	margin-bottom: 0.2rem;
+}
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -82,7 +85,6 @@
 .breadcrumb-style3 .breadcrumb-item + .breadcrumb-item::before {
   content: '\f287'; }
   
-  
   .content {
   padding: 20px; }
   @media (min-width: 992px) {
@@ -154,28 +156,112 @@
  .top_div {
  	width: 100%;
  }
+  .second_div {
+ 	width: 100%;
+ }
  .col-mg-au{
  	margin: 0 auto;
  }
 .border {
 	width: 100%;
 	display: table;
+	padding: 20px;
 }
-
-.top_left {
+.footer{
+	border-top: 1px solid #e7e7e7;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(231, 231, 231);
+    display: table;
+    margin: 1rem auto 0 auto;
+    width: 80%;
+}
+.foot_inner {
+	padding-top: 0.5rem;
+	display: table-cell;
 	vertical-align: middle;
-	width: 14%;
-	display: table-cell;
+	text-align: center;	
 }
-.top_right{
-	width: 100%;
-	padding-left: 25px;
-	display: table-cell;
- }
+.foot_img{
+	width: 12%;
+}
 
- 
-.mg-t-10 {
-  margin-top: 10px; }
+.top_head {
+	display: block;
+}
+.top_bttm{
+	margin-top: 1.4rem;
+	display: block;
+ }
+.top_id, .top_img2, .top_alias, .top_distance {
+	display: table;
+	margin: 0 auto;
+}
+.id_spn{
+	font-weight: 500;
+	font-size:16px;
+}
+.alias_spn{
+	font-weight: 100;
+	font-size: 14px;
+    color: #7399d5;
+}
+.distance_spn{
+	font-weight: 100;
+	color: #8c8c8c;
+	font-size: 13px;
+}
+.score_spn{
+	color: #01CE61;
+}
+.rank_spn{
+	position: absolute;
+	top: 7%;
+	left: 10%;
+}
+.rank{
+	font-size: 16px;
+	color: #898989;
+	font-weight: 600
+}
+.total_div{
+	margin-top: 20px;
+}
+.total_div::after{
+    content: '';
+    display: block;
+	clear: both;
+	margin-bottom: -5px;
+}
+.tab-content{
+	margin-top: 5px;
+}
+.select_num{
+	width: 10%;
+	float: right;
+}
+
+.search_div{
+	float: right;
+	width: 20%;
+	margin-right: 5px;
+}
+
+.search_in{
+	border-right-style: none;
+}
+
+.search_btn{
+	border:	1px solid #ced4da;
+	border-left-style: none;
+}
+ .paginationBox{
+	margin-top: 10px;
+    float: right;
+}
+.mg-t-15 {
+  margin-top: 15px; 
+}
 
   
 /* tab CSS */  

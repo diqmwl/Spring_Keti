@@ -624,15 +624,7 @@
     margin-bottom: 0px !important;
 }
 
-.table {
-  .thead-light {
-    th {
-      color: $table-head-color;
-      background-color: $table-head-bg;
-      border-color: $table-border-color;
-    }
-  }
-}
+
 
 .table thead th {
     font-size: 13px;
