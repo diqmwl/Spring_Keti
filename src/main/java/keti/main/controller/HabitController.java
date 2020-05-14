@@ -60,7 +60,6 @@ public class HabitController {
 		for(int i = 0; i < 3; i++) {
 			top_list.add(rank_list.get(i));
 		}
-		System.out.println(question);
 		if(!question.equals("")) {
 			rank_list = habitService.getSearch(question);
 			pagination.pageInfo(1, 1, 1);
