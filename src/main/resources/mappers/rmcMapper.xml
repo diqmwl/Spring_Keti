@@ -4,44 +4,59 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="keti.main.mapper.rmcMapper">
-
+   <!-- 변경완료 -->
 	<select id="getCount" resultType="int">
-		select count(*) FROM MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.FMI = fmi.code AND rmc.SPN = spn.code
+		select count(*) from (select * from dtc_monit.MAIN where fmi != 0 group by car_id) as sub
 	</select>
-
+   <!-- 변경완료 -->
 	<select id="getDetailCount" resultType="int" parameterType="String">
-		select count(*) FROM MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.FMI = fmi.code AND rmc.SPN = spn.code AND car_id = ${car_id}
+		select count(*) from MAIN where car_id = #{car_id}
 	</select>
 
+   <!-- 변경완료 -->
 	<select id="selectRMC" parameterType="hashmap" resultType="rmc" fetchSize="1000">
 		select rmc.time, rmc.car_id, rmc.FMI, fmi.name_kr as FMI_NAME, rmc.SPN,
 		spn.description_kr as SPN_DESCRIPTION, rmc.DTC, rmc.CM,
 		rmc.DRIVE_SPEED, rmc.OC, rmc.RPM, rmc.GPS_LAT, rmc.GPS_LONG from
-		MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.SPN =
-		spn.code AND rmc.FMI = fmi.code group by car_id order by time desc limit #{listSize} offset #{offset}
+		MAIN as rmc left join SPN_CODE as spn
+        on rmc.SPN = spn.code left join FMI_CODE as fmi
+        on rmc.FMI = fmi.code where rmc.FMI != 0 group by car_id order by time desc limit #{listSize} offset #{offset}
 	</select>
-
+	
+	   <!-- 변경완료 -->
 	<select id="getChart" resultType="chart" fetchSize="1000">
-		select date_format(time, '%Y%m%d') as date, count(*) as count from MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.SPN =
-		spn.code AND rmc.FMI = fmi.code group by date_format(time, '%Y%m%d') order by date desc limit 7
+		select date_format(time, '%Y%m%d') as date, count(*) as count from (select rmc.time, rmc.car_id from
+		MAIN as rmc left join SPN_CODE as spn
+        on rmc.SPN = spn.code left join FMI_CODE as fmi
+        on rmc.FMI = fmi.code where rmc.FMI != 0 group by car_id order by time desc) as sub group by date_format(time, '%Y%m%d') order by date desc limit 7
 	</select>
 	
+	<!-- 변경완료 -->
 	<select id="getCar" resultType="hashmap" fetchSize="1000" parameterType="String">
-		select rmc.car_id from MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.SPN =
-		spn.code AND rmc.FMI = fmi.code AND date_format(rmc.time, '%Y%m%d') = ${data} group by car_id order by time desc
+		select sub.car_id from
+		(select rmc.time, rmc.car_id from
+		MAIN as rmc left join SPN_CODE as spn
+		on rmc.SPN = spn.code left join FMI_CODE as fmi
+		on rmc.FMI = fmi.code where rmc.FMI != 0 group by car_id order by time
+		desc) as sub where date_format(sub.time, '%Y%m%d') = ${data} 
 	</select>
 	
+		   <!-- 변경완료 -->
 	<select id="getLastChart" resultType="chart" fetchSize="1000">
-		select date_format(time, '%Y%m%d') as date, count(*) as count from MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.SPN =
-		spn.code AND rmc.FMI = fmi.code group by date_format(time, '%Y%m%d') order by date desc limit 7 offset 7
+		select date_format(time, '%Y%m%d') as date, count(*) as count from (select rmc.time, rmc.car_id from
+		MAIN as rmc left join SPN_CODE as spn
+        on rmc.SPN = spn.code left join FMI_CODE as fmi
+        on rmc.FMI = fmi.code where rmc.FMI != 0 group by car_id order by time desc) as sub group by date_format(time, '%Y%m%d') order by date desc limit 7 offset 7
 	</select>
 	
+	   <!-- 변경완료 -->
 	<select id="selectDetailRMC" parameterType="hashmap" resultType="rmc" fetchSize="1000">
 		select A.*, B.status from (select rmc.time, rmc.car_id, rmc.FMI, fmi.name_kr as FMI_NAME, rmc.SPN,
 		spn.description_kr as SPN_DESCRIPTION, rmc.DTC, rmc.CM,
 		rmc.DRIVE_SPEED, rmc.OC, rmc.RPM, rmc.GPS_LAT, rmc.GPS_LONG from
-		MAIN_RMC as rmc, SPN_CODE as spn, FMI_CODE as fmi where rmc.SPN =
-		spn.code AND rmc.FMI = fmi.code AND rmc.car_id = #{car_id} order by time desc limit #{listSize} offset #{offset}) as A LEFT JOIN RMC_ALTER AS B
+		MAIN as rmc left join SPN_CODE as spn
+        on rmc.SPN = spn.code left join FMI_CODE as fmi
+        on rmc.FMI = fmi.code where car_id = #{car_id} order by time desc limit #{listSize} offset #{offset}) as A LEFT JOIN RMC_ALTER AS B
 		ON A.time = B.time
 	</select>
 	

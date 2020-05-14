@@ -70,7 +70,6 @@ public class BrokenService {
 		float min_rate = (now.get("min") - last.get("min")) / last.get("min") * 100;
 		float avg_rate = (now.get("avg") - last.get("avg")) / last.get("avg") * 100;
 		float sum_rate = (now.get("sum") - last.get("sum")) / last.get("sum") * 100;
-		
 		hashMap.put("max", max_rate);
 		hashMap.put("min", min_rate);
 		hashMap.put("avg", avg_rate);
@@ -114,7 +113,7 @@ public class BrokenService {
 				avg += temp.get(i).getCount();
 		}
 		
-		if(flag == 1) hash.put("avg", avg/ (temp.size()-1));
+		if(flag == 1) hash.put("avg", (temp.size() > 0) ? avg/ temp.size() : 0);
 		else hash.put("sum", avg);		
 	}
 	
