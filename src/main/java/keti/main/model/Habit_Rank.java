@@ -38,6 +38,9 @@ public class Habit_Rank implements Comparable<Habit_Rank> {
 	@Column(name = "UL")
 	private String UL;
 	
+	@Column(name = "UR")
+	private String UR;
+	
 	@Column(name = "car_id")
 	private String car_id;
 	

@@ -47,4 +47,12 @@ public class HabitDAO {
 		
 		return Double.parseDouble(rank_list.get(0).getCount());
 	}
+
+	public List<Habit_Rank> getSearch(String question) {
+		QueryResult queryResult = influxDB.query(new Query("select * from DANGER_RANK_202002 where car_id = '"+question+"'", "SAMPYO_MONIT"));
+		InfluxDBResultMapper resultMapper = new InfluxDBResultMapper();
+		List<Habit_Rank> search_list = resultMapper.toPOJO(queryResult, Habit_Rank.class);		
+		
+		return search_list;
+	}
 }

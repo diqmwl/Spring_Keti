@@ -43,4 +43,33 @@ public class HabitController {
 		return "habit";
 	}
 	
+	@GetMapping(value = "user")
+	public String habitSearch(Model model,
+			@RequestParam(value = "page", required = false, defaultValue="1")int page,
+			@RequestParam(value = "range", required = false, defaultValue="1")int range,
+			@RequestParam(value = "listSize", required = false, defaultValue="25")int listSize,
+			@RequestParam(value = "question", required = false)String question) {
+		
+		int total_count = (int) habitService.getCount();
+		Pagination pagination = new Pagination();
+		pagination.setListSize(listSize);
+		pagination.pageInfo(page, range, total_count);
+		
+		List<Habit_Rank> rank_list = habitService.getRank(listSize,(page-1) * listSize);
+		List<Habit_Rank> top_list = new ArrayList<Habit_Rank>();
+		for(int i = 0; i < 3; i++) {
+			top_list.add(rank_list.get(i));
+		}
+		System.out.println(question);
+		if(!question.equals("")) {
+			rank_list = habitService.getSearch(question);
+			pagination.pageInfo(1, 1, 1);
+		}
+		model.addAttribute("pagination", pagination);
+		model.addAttribute("top_list", top_list);
+		model.addAttribute("total_count", total_count);
+		model.addAttribute("rank_list", rank_list);
+		return "habit";
+	}
+	
 }

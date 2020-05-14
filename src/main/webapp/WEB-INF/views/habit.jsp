@@ -43,12 +43,15 @@
 												<c:choose>
 													<c:when test="${status.index+1 eq 1}">
 														<c:set var="image" value="gold" />
+														<c:set var="alias" value="환경 1등 공신" />
 													</c:when>
 													<c:when test="${status.index+1 eq 2}">
 														<c:set var="image" value="silver" />
+														<c:set var="alias" value="환경 마스터 운전자" />
 													</c:when>
 													<c:otherwise>
 														<c:set var="image" value="bronze" />
+														<c:set var="alias" value="환경 지킴이 운전자" />
 													</c:otherwise>
 												</c:choose>
 												<img alt="${status.index+1}등" src="/resources/aiaas/kr/images/${image}.png">
@@ -61,8 +64,9 @@
 												</p>
 											</div>
 											<div class="top_alias">
+											
 												<p>
-													<span class="alias_spn">환경 마스터 운전자</span>
+													<span class="alias_spn">${alias}</span>
 												</p>
 											</div>
 											<div class="top_distance">
@@ -73,8 +77,7 @@
 											</div>
 											<div class="top_id">
 												<p class="information_section_item">
-													<strong class="category_title">상대 랭킹</strong> <span class="category_content type_number"> <span class="ellis">${total_count - top.rank_relative + 1}등
-													</span>
+													<strong class="category_title">상대 랭킹</strong> <span class="category_content type_number"> <span class="ellis">${total_count - top.rank_relative + 1}등 </span>
 													</span>
 												</p>
 											</div>
@@ -109,9 +112,9 @@
 										</select>
 									</div>
 									<div class="search_div">
-										<form class="navbar-form" role="search">
+										<form class="navbar-form" role="search" action="/habitSVC/user">
 											<div class="input-group">
-												<input type="text" class="form-control search_in" placeholder="Search" name="q">
+												<input type="text" class="form-control search_in" placeholder="Search" name="question">
 												<div class="input-group-btn">
 													<button class="btn btn-default search_btn" type="submit">
 														<i class="fa fa-search"></i>
@@ -127,7 +130,7 @@
 										<div class="table_box">
 											<table id="rank_table" class="table table-hover" style="width: 100%">
 												<thead>
-													<tr>
+													<tr class="rank_info">
 														<th scope="col">순위</th>
 														<th scope="col">차량 번호</th>
 														<th scope="col">위험 점수</th>
@@ -137,10 +140,27 @@
 												<tbody>
 													<c:forEach var="rank" items="${rank_list}">
 														<tr id="${rank.car_id}" scope="row">
-															<td>${total_count - rank.rank + 1}</td>
+															<td style="font-size: 16px; font-weight: bold">${total_count - rank.rank + 1}</td>
 															<td>${rank.car_id }</td>
 															<td>${rank.total_danger }</td>
-															<td>${rank.rank }</td>
+															<td>
+																<div class="rank_detail" style="margin-right: 1%;">
+																	<ul class="list-group list-group-flush">
+																		<li class="list-group-item">급 가속 횟수 : ${rank.a}</li>
+																		<li class="list-group-item">급 출발 횟수 : ${rank.q}</li>
+																		<li class="list-group-item">급 감속 횟수 : ${rank.d}</li>
+																		<li class="list-group-item">급 정지 횟수 : ${rank.s}</li>
+																	</ul>
+																</div>
+																<div class="rank_detail" style="margin-left: 1%;">
+																	<ul class="list-group list-group-flush">
+																		<li class="list-group-item">급 유턴(좌) : ${rank.UL}</li>
+																		<li class="list-group-item">급 유턴(우) : ${rank.UR}</li>
+																		<li class="list-group-item">급 진로변경 횟수 : ${rank.SL}</li>
+																		<li class="list-group-item">급 앞지르기 횟수 : ${rank.o}</li>
+																	</ul>
+																</div>
+															</td>
 														</tr>
 													</c:forEach>
 												</tbody>
@@ -237,4 +257,5 @@
 	</div>
 </body>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/pagination.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/habit.js"></script>
 </html>

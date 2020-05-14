@@ -22,5 +22,10 @@ public class HabitService {
 		// TODO Auto-generated method stub
 		return habitDAO.getCount();
 	}
+
+	public List<Habit_Rank> getSearch(String question) {
+		// TODO Auto-generated method stub
+		return habitDAO.getSearch(question);
+	}
 	
 }
