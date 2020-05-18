@@ -137,7 +137,7 @@
 								<li onclick="location.href='/bceSVC'" title="BCE 서비스 이동">
 									<div class="clear_li">
 										<header
-											style="background-image: url(&quot;https://static.wanted.co.kr/images/company/1776/tvgy1xnkxve6kfkw__400_400.jpg&quot;);">
+											style="background-image: url(&quot;/resources/aiaas/kr/images/logo_bce_svc.png&quot;);">
 										</header>
 										<div class="body">
 											<dl>
