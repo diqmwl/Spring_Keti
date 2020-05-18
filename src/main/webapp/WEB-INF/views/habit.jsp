@@ -9,6 +9,8 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/aiaas/kr/css/habit.css">
 </head>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/pagination.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/habit.js"></script>
 <body>
 
 	<div class="page-profile">
@@ -256,6 +258,5 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/pagination.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/habit.js"></script>
+
 </html>

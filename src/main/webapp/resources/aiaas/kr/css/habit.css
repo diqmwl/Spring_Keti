@@ -254,6 +254,7 @@ p{
 .search_btn{
 	border:	1px solid #ced4da;
 	border-left-style: none;
+	margin-left: -3px;
 }
  .paginationBox{
 	margin-top: 10px;
