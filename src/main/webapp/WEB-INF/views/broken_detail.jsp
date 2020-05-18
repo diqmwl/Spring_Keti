@@ -9,11 +9,6 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/aiaas/kr/css/broken.css">
 </head>
-
-<script	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/pagination.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/brokendetail.js"></script>
 <body>
 
 	<div class="page-profile">
@@ -308,4 +303,8 @@
 		</div>
 	</div>
 </body>
+<script	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/pagination.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/brokendetail.js"></script>
 </html>
