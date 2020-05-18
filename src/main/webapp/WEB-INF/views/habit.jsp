@@ -136,6 +136,7 @@
 														<th scope="col">순위</th>
 														<th scope="col">차량 번호</th>
 														<th scope="col">위험 점수</th>
+														<th scope="col">이동거리</th>
 														<th scope="col">정보</th>
 													</tr>
 												</thead>
@@ -145,6 +146,7 @@
 															<td style="font-size: 16px; font-weight: bold">${total_count - rank.rank + 1}</td>
 															<td>${rank.car_id }</td>
 															<td>${rank.total_danger }</td>
+															<td><fmt:formatNumber value="${rank.drive_length }" pattern=".0" /> km</td>
 															<td>
 																<div class="rank_detail" style="margin-right: 1%;">
 																	<ul class="list-group list-group-flush">
