@@ -8,6 +8,10 @@
 		<typeAlias type="keti.main.model.Broken_Chart" alias="chart" />
 		<typeAlias type="keti.main.model.Broken_Alter" alias="alter" />	
 		
+		<typeAlias type="keti.main.model.Bce_Battery" alias="battery" />
+		<typeAlias type="keti.main.model.Bce_Cool" alias="cool" />
+		<typeAlias type="keti.main.model.Bce_Oil" alias="oil" />
+		
 	</typeAliases>
 
 </configuration>

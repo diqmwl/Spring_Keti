@@ -6,4 +6,7 @@ $(document).ready(function() {
         $(this).find('li').css('background-color','#FFFFFF');
     });
 	
+    $('tbody tr').click( function() {
+    	location.href = "/habitSVC/habitdetail?id="+$(this).attr('id');
+    });
 });

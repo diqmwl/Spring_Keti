@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="keti.main.mapper.bceMapper">
+	<select id="getBattery" resultType="battery" fetchSize="1000">
+		select * from (select * FROM INDIC_BATTERY order by INDIC_BATTERY.time desc LIMIT 18446744073709551615) as sub 
+		group by sub.car_id order by batteryval limit 10
+	</select>
+	
+	<select id="getCool" resultType="cool" fetchSize="1000">
+		select * from (select * FROM INDIC_COOLANT order by INDIC_COOLANT.time desc LIMIT 18446744073709551615) as sub 
+		group by sub.car_id order by coolantval limit 10
+	</select>
+	
+	<select id="getOil" resultType="oil" fetchSize="1000">
+		select * from (select * FROM INDIC_ENGINEOIL order by INDIC_ENGINEOIL.time desc LIMIT 18446744073709551615) as sub 
+		group by sub.car_id order by engineoilval limit 10
+	</select>
+</mapper>

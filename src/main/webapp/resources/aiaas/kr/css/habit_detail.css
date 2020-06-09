@@ -1,0 +1,103 @@
+span{
+	font-weight: 500;
+	font-size: 14px;
+	font-style: "Noto Sans KR", sans-seri";
+}
+.score_num > h1{
+	margin: 0px;
+	font-size: 5em;
+	display: inline-block;
+}
+.score_div{
+	display: table;
+	width: 100%;
+}
+.score{
+	width: 90px;
+	height: 95px;
+	display: table-cell;
+	vertical-align: middle;
+}
+.score_detail{
+	display: table-cell;
+	height: 95px;
+	padding-left: 10px;
+	vertical-align: middle;
+}
+.score_per{
+	text-align: center;
+	background-color: #F7F7F7;
+	border-radius: 8px;
+	width: 90%;
+    height: 20px;
+    margin: auto;
+    vertical-align: middle;
+}
+.score_container{
+	width: 19.7%;
+	display: inline-block;
+	text-align: center;
+}
+.circleBase {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    width: 70px;
+    height: 70px;
+    display: inline-table;
+    vertical-align: middle;
+    text-align: center;
+    background: white;
+}
+.best{
+    border: 6px solid #4285F4;
+}
+.best > span{
+	color: #4285F4;
+}
+.good {
+    border: 6px solid #F4B400;
+}
+.good > span{
+	color: #F4B400;
+}
+.bad {
+    border: 6px solid #DB4437;
+}
+.bad > span{
+	color: #DB4437;
+}
+
+.circleBase > span{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.score_graph{
+	padding-top: 7px;
+	margin-top: 20px;
+    border-top: 1px solid #e7e7e7;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(231, 231, 231);
+}
+
+.place-name{
+	font-weight: 100;
+    color: #8c8c8c;
+	font-size: 18px;
+}
+.place-date{
+	float: right;
+}
+.place-container::after{
+    content: '';
+    display: block;
+	clear: both;
+}
+.open-modal{
+	float: right;
+	color: #afafaf !important;
+}
+.open-modal:hover{
+	color: black !important;
+}

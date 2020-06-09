@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html>
@@ -22,117 +23,36 @@
 			<div class="content content-fixed">
 				<div class="container-fluid">
 					<div class="row">
-						<div class="col-lg-4 col-md-6 col-sm-6">
+						<c:forEach items="${vehicle_info}" var="info">
+						<div class="col-lg-4 col-md-12 col-sm-12">
 							<div class="card card-stats">
-								<div class="card-header  cd-white">
-									<h5 class="card-title">배터리 Top 10</h5>
+								<div class="card-header cd-white">
+									<h5 class="card-title">${info.name} Top 10</h5>
 								</div>
 								<div class="card-body">
-									<table id="rmc_table"
-										class="table table-striped table-bordered" style="width: 100%">
+									<table id="bce_table"
+										class="table table-hover" style="width: 100%">
 										<thead>
 											<tr>
-												<th>time</th>
-												<th>car_id</th>
-												<th>DTC</th>
-												<th>FMI</th>
-												<th>SPN</th>
+												<th>시간</th>
+												<th>차량 아이디</th>
+												<th>${info.name} 값</th>
 											</tr>
 										</thead>
 										<tbody>
+											<c:forEach items="${info.ary}" var="info_detail">
 											<tr>
-												<th>time</th>
-												<th>car_id</th>
-												<th>DTC</th>
-												<th>FMI</th>
-												<th>SPN</th>
+												<th>${fn:substring(info_detail.time,0,19)}</th>
+												<th>${info_detail.car_id}</th>
+												<th>${info_detail[info.valname] }</th>
 											</tr>
-											<tr>
-												<th>time</th>
-												<th>car_id</th>
-												<th>DTC</th>
-												<th>FMI</th>
-												<th>SPN</th>
-											</tr>
+											</c:forEach>
 										</tbody>
 									</table>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-4 col-md-6 col-sm-6">
-							<div class="card card-stats">
-								<div class="card-header  cd-white">
-									<h5 class="card-title">냉각수 Top 10</h5>
-								</div>
-								<div class="card-body">
-									<table id="rmc_table"
-										class="table table-striped table-bordered" style="width: 100%">
-										<thead>
-											<tr>
-												<th>time</th>
-												<th>car_id</th>
-												<th>DTC</th>
-												<th>FMI</th>
-												<th>SPN</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<th>time</th>
-												<th>car_id</th>
-												<th>DTC</th>
-												<th>FMI</th>
-												<th>SPN</th>
-											</tr>
-											<tr>
-												<th>time</th>
-												<th>car_id</th>
-												<th>DTC</th>
-												<th>FMI</th>
-												<th>SPN</th>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 col-sm-6">
-							<div class="card card-stats">
-								<div class="card-header  cd-white">
-									<h5 class="card-title">엔진오일 Top 10</h5>
-								</div>
-								<div class="card-body">
-									<table id="rmc_table"
-										class="table table-striped table-bordered" style="width: 100%">
-										<thead>
-											<tr>
-												<th>time</th>
-												<th>car_id</th>
-												<th>DTC</th>
-												<th>FMI</th>
-												<th>SPN</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<th>time</th>
-												<th>car_id</th>
-												<th>DTC</th>
-												<th>FMI</th>
-												<th>SPN</th>
-											</tr>
-											<tr>
-												<th>time</th>
-												<th>car_id</th>
-												<th>DTC</th>
-												<th>FMI</th>
-												<th>SPN</th>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
+						</c:forEach>
 						
 					</div>
 					<div class="row">

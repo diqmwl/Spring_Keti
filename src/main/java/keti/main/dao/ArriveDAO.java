@@ -25,6 +25,7 @@ public class ArriveDAO {
 	InfluxDB influxDB;
 	
 	public ArriveDAO() {
+		System.out.println("생성자케케");
 		influxDB = InfluxDBFactory.connect("http://125.140.110.217:8999" , "tinyos", "tinyos");
 	}
 

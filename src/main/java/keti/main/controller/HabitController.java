@@ -71,4 +71,9 @@ public class HabitController {
 		return "habit";
 	}
 	
+	@GetMapping(value = "habitdetail")
+	public String habitDetail(Model model,
+			@RequestParam(value = "id")String id) {
+		return "habit_detail";
+	}
 }

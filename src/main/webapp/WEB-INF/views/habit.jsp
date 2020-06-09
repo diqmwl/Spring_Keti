@@ -7,6 +7,7 @@
 <%@include file="common/meta.jsp"%>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/aiaas/kr/css/habit_common.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/aiaas/kr/css/habit.css">
 </head>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/aiaas/kr/js/pagination.js"></script>
